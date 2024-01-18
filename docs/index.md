@@ -1,11 +1,5 @@
-# Obsidian Notes
+# Crelemental's Notes!
 
-Publish your public notes with MkDocs
+## Hey everyone!
 
-## Hello World!
-
-The `index.md` in the `/docs` folder is the homepage you see here.
-
-The folders in `/docs` appear as the main sections on the navigation bar.
-
-The notes appear as pages within these sections. For example, [[Note 1]] in `Topic 1`
+I will try to keep this update as much as possible, hopefully my notes can become useful for someone that might be studying for certificates that I've already taken!
