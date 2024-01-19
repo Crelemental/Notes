@@ -1,4 +1,3 @@
-#NetworkSec
 # Firewalls, IDS, IPS
 
 ### Firewalls
@@ -182,3 +181,4 @@ Require encryption for wireless networks. Enable WPA2, and if possible WPA3 so t
 Audit Access. To help look for suspicious activity and to do forensic analysis for when a device gets breached. Collect these logs and store them off the device. Syslog is a common way to gather logs and sent to a syslog server for storage. 
 
 Backup. Keep backup copies of any device configuration files in case they need to be restored due to misconfiguration, attack, or device replacement. Devices should be backed up and stored remotely. Use the idea of 3-2-1 for backups.
+#NetworkSec

@@ -1,4 +1,4 @@
-#ITSec
+
 ![[Pasted image 20231004184437.png]]![[Pasted image 20231004184939.png]]
 **Confidentiality** refers to our ability to protect our data form those who are not authorized to view it. You could implement confidentiality at many levels of a process.
 **Integrity** is the ability to prevent people from changing your data in an unauthorized or undesirable manner. To maintain integrity, not only do you need to have the means to prevent unauthorized changes to your data, but you need the ability to reverse unwanted authorized changes.
@@ -65,4 +65,5 @@ Availability -  Interruption Modification Fabrication
 	![[Pasted image 20231004203017.png]]
 	![[Pasted image 20231004203242.png]]
 	![[Pasted image 20231004203250.png]]
-	
+
+#ITSec

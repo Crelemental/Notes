@@ -1,4 +1,3 @@
-#NetworkSec
 # TCP/IP and OSI
 ![[Pasted image 20231212122409.png]]
 ### The TCP/IP networking model is made up of four layers: #OSI
@@ -140,3 +139,4 @@ Hybrid Cloud
 Multi-Cloud
 	Multi-cloud is the concept of leveraging the services of multiple public cloud providers, such as hosting your website at AWS and GCP and balancing the users between these providers. This concept, in practice, can add redundancy and flexibility.
 
+#NetworkSec

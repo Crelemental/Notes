@@ -1,4 +1,3 @@
-#NetworkSec
 # Network Sec Overview
 ### Vulnerabilities
 **Physical Security.** If attackers can gain access to your files or to the physical computers they can steal copies of the data. The SecOps team cannot change the encryption key if the copy leaves the network. It will take a while to brute force the encryption but it will eventually yield. Gotta protect your assets  with **physical security.**
@@ -108,3 +107,5 @@ Some methods that can be employed to help prevent availability issues include:
 - creating and maintaining a full disaster recovery plan that includes a full site failover as well as the method to restore data for individual servers;
 - implementing server high availability where possible, employing clustering technology where appropriate; and
 - setting up regular backups of your data and considering storing a backup copy at another physical location to protect against site-level disasters.
+
+#NetworkSec

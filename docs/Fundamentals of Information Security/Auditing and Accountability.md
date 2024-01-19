@@ -1,4 +1,4 @@
-#ITSec
+
 ![[Pasted image 20231006114927.png]]
 You need to keep people *accountable* meaning they're responsible for their actions, especially keeping track how they access sensitive data.  Measures put in place to ensure accountability is *auditing*, which is the process of reviewing an organization's records or information. 
 
@@ -8,4 +8,5 @@ You need to keep people *accountable* meaning they're responsible for their acti
 	**Nonrepudiation** refers to a situation in which an individual is unable to successfully deny that they have made a statement or taken an action, generally because we have sufficient evidence that they did.
 	**Deterrence**. Accountability is a great deterrent against misbehavior in environments. It lies in letting people know they will be held accountable for their actions. 
 	*Intrusion Detection Systems (IDSs)* and *Intrusion Prevention Systems (IPSs)*
-	
+
+#ITSec

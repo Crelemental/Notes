@@ -1,4 +1,4 @@
-#ITSec
+
 *Authorization* is the process of determining exactly what an authenticated party can do. You implement it using *access controls* which are tools and systems regulating access.
 	Used to carry out: allowing access, denying access, limiting access, and revoking access.
 ![[Pasted image 20231005170349.png]]
@@ -52,3 +52,4 @@ An *access control model* is a way of determining who should be allowed access t
 	Tailgating, a problem which occurs when you authenticate your physical access control measure, such as a badge, allowing another unauthenticated person behind you.
 	
 ![[Pasted image 20231005173226.png]]
+#ITSec

@@ -1,4 +1,4 @@
-#ITSec
+
 One strategy for reducing the impact of attacks is *network segmentation*. You can divide a network into smaller networks called *subnets*. You can control the flow of information between these networks. 
 
 You could also secure networks by funneling traffic through *choke points*. It might be the routers that move traffic from one subnet to another, firewalls that filter traffic through your networks or portions of the networks, or the application proxies that filter the traffic for applications.
@@ -27,3 +27,4 @@ A **Honeypot** is a system that can detect, monitor, and sometimes tamper with t
 You can expand them into networks of them called honeynets. It connects multiple honeypots with varying configurations and vulnerabilities, with a centralized instrumentation for monitoring them all. https://www.honeynet.org
 
 Tools that can map the topology of firewalls. **Scapy** is well known for such efforts. It can construct specially craft ICMP packets that evade normal measure put in place to prevent you form seeing the devices that are behind a firewall. You can also script it to manipulate network traffic and test how firewalls and IDS respond. 
+#ITSec

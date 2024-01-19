@@ -1,4 +1,4 @@
-#ITSec
+
 A vulnerability assessment is a process that uses a specially designed tool to scan for vulnerabilities. Qualys and Nessus. 
 
 Start by mapping your environment so you know what devices are present on your network. Most vuln scanning tools allow you to create such a map, or you can import info from say Nmap. 
@@ -23,3 +23,4 @@ Application Scanning is specific to web technologies and vulnerabilities, and ca
 ![[Pasted image 20231008164419.png]]
 
 ![[Pasted image 20231008164754.png]]
+#ITSec

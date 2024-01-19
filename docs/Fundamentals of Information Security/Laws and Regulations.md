@@ -1,4 +1,4 @@
-#ITSec
+
 *Compliance* is your adherence to the rules and regulations that govern the information you handle and the industry within which you operate.
 *Regulatory Compliance* is your adherence to the laws specific to the industry in which you're operating. 
 *Industry Compliance* is adherence to regulations that aren't mandated by law but that can nonetheless have severe impacts upon your ability to conduct business.
@@ -19,3 +19,4 @@ Standards are often from the series of **Special Publications (SPs)** created by
 	![[Pasted image 20231006145522.png]]![[Pasted image 20231006145530.png]]
 
 **Cloud Models** ![[Pasted image 20231006145646.png]]
+#ITSec

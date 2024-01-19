@@ -1,4 +1,4 @@
-#Core1 
+
 ![[Pasted image 20231010163319.png]]PCIe gens
 
 ![[Pasted image 20231010164030.png]]
@@ -36,3 +36,4 @@ A nested RAID configuration combines features of two basic RAID levels. **RAID 
 
 ![[Pasted image 20231010172239.png]]![[Pasted image 20231010172818.png]]
 ![[Pasted image 20231010184146.png]]
+#Core1 

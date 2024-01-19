@@ -1,4 +1,3 @@
-#Core2
 # Configuring Windows
 
 It can also be used to change the User Account Control (UAC) settings. UAC is a system to prevent unauthorized use of administrator privileges. At the default setting level, changing an administrative setting requires the user to confirm a prompt or input the credentials for an administrator account.
@@ -150,4 +149,5 @@ ipconfig /flushdns
 
 ### Manage Security Shares
 - **Roaming profiles** copies the whole profile from a share at logon and copies the updated profile back at logoff. Roaming profiles are enabled by entering the path to a share in the **Profile** path box in the general form \\SERVER\ROAMING$\%USERNAME% . The main drawback is that if a profile contains a lot of large data files, there will be a big impact on network bandwidth and sign-in and sign-out performance will be slow.
-- 
+
+#Core2

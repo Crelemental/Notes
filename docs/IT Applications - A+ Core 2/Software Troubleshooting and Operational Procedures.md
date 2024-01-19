@@ -1,4 +1,3 @@
-#Core2
 # Managing Security Settings
 If the malware can be delivered as the payload for an exploit of a severe vulnerability, it may be able to execute without requiring any authorization using SYSTEM privileges. Alternatively, the malware may be able to use an exploit to escalate privileges after installation. Malware running with this level of privilege is referred to as a **rootkit** . The term derives from UNIX/Linux where any process running as root has unrestricted access to everything from the root of the file system down.
 
@@ -68,3 +67,4 @@ IT Infrastructure Library (ITIL) is a popular documentation of good and best pra
 - Configuration baselines are the settings that should be applied to the CI to ensure secure and reliable operation.
 - Performance baselines are metrics for expected performance to provide a basis for comparison for ongoing monitoring of a CI.
 
+#Core2

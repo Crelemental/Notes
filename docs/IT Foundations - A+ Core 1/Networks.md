@@ -1,4 +1,3 @@
-#Core1 
 Most cabled LANs are based on the 802.3 Ethernet standards maintained by the Institute of Electrical and Electronics Engineers (IEEE). The IEEE 802.3 standards are designated _x_ BASE- _Y_ , where _x_ is the nominal data rate and _Y_ is the cable type. For example:
 
 - 100BASE-T refers to Fast Ethernet over copper twisted pair cabling. Fast Ethernet works at 100 Mbps.
@@ -33,4 +32,4 @@ Larger workgroups and corporate networks require additional functionality in the
 - Multi-mode fiber (MMF) has a larger core (62.5 or 50 microns) and is designed to carry a shorter wavelength infrared light (850 nm or 1,300 nm). MMF uses less expensive and less coherent LEDs or vertical cavity surface emitting lasers (VCSELs) and consequently is less expensive to deploy than SMF. However, MMF does not support such high signaling speeds or long distances as single-mode and so is more suitable for LANs than WANs.
 
 ![[Pasted image 20231011174219.png]]
-
+#Core1 

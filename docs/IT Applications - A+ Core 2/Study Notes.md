@@ -1,4 +1,3 @@
-#Core2
 The user can also display help on a particular command by using the /? switch.
 
 The robocopy command (or "robust copy") is another file copy utility. Microsoft now recommends using robocopy rather than xcopy. For example, robocopy works better with long file names and New Technology File System (NTFS) attributes.
@@ -182,6 +181,7 @@ sfc :scans integrity of protected files and replaces incorrect versions
 diskpart :cml partitioning utility
 pathping :features of ping and tracert
 
+#Core2
    
 
 

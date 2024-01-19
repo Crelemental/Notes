@@ -1,4 +1,4 @@
-#ITSec
+
 ![[Pasted image 20231008132526.png]]
 **Buffer Overflows** occur when you don't properly account for the size of the data input into your applications. If an application accepts data, most programming languages will require you to specify the amount of data you take in (*bounds checking*), you might receive 1000 character when you only had storage for 50. The extra data may overwrite other areas in memory that are used by other applications or the OS. Some languages like Java and C# implement bounds checking.
 
@@ -35,5 +35,5 @@
 
 ![[Pasted image 20231008150922.png]]
 ![[Pasted image 20231008151019.png]]
-
+#ITSec
 

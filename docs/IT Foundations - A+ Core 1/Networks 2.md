@@ -1,4 +1,3 @@
-#Core1 
 The core of the Internet consists of high bandwidth fiber optic links connecting Internet exchange points (IXPs). These trunk links and IXPs are mostly created by telecommunications companies and academic institutions. Within the datacenter supporting any given IXP, Internet service providers (ISPs) establish high-speed links between their networks, using transit and peering arrangements to carry traffic to and from parts of the Internet they do not physically own.
 
 ![[Pasted image 20231012153103.png]]
@@ -60,3 +59,4 @@ Each VLAN must be configured with its own subnet address and IP address range. C
 
 As well as reducing the impact of excessive broadcast traffic, from a security point of view, each VLAN can represent a separate zone. Traffic passing between VLANs can easily be filtered and monitored to ensure it meets security policies. VLANs are also used to separate nodes based on traffic type, such as isolating devices used for VoIP so that they can more easily be prioritized over data passing over other VLANs.
 
+#Core1 

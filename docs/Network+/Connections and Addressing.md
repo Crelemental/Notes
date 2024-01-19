@@ -1,4 +1,3 @@
-#NetworkPlus
 # OSI Model #OSI
 
 ![[Pasted image 20240116111327.png]]
@@ -128,10 +127,171 @@ Enterprise switches and routers are available with modular, hot-swappable trans
 
 **Bridges**. Operates at Layer 2, connecting separate physical network segments, allowing them to communicate as part of the same logical network (while creating separate collision domains to improve efficiency). Creates 1 logical network, referred to as a **layer 2 broadcast domain.** An Ethernet bridge builds a MAC address table in memory to track which addresses are associated with which of its ports.
 
-**Layer 2 Switches**. Performs the same sort of function as a bridge but in a more granular way and with many more ports. Each switch port becomes a separate collision domain. The switch establishes a point-point link between any 2 network nodes, ie **microsegmentation**.
+**Layer 2 Switches**. Performs the same sort of function as a bridge but in a more granular way and with many more ports. Each switch port becomes a separate collision domain. The switch establishes a point-point link between any 2 network nodes, ie **micro-segmentation**. As with a bridge, though, traffic on all switch ports is in the same broadcast domain, unless the switch is configured to use virtual LANs (VLANs).
+
+**NICS**. Network interface card. Transceiver component responsible for physically connecting the node to the transmission medium. A NIC may provision multiple ports on the same card. This allows either connections to different networks or aggregating the separate links into a higher bandwidth channel. Each ethernet port has a unique MAC address, aka an **extended unique identifier (EUI)**.
+
+**MAC address format**
+	MAC/EUI is a 48bit (6byte) identifier. Format differs on the system architecture. Often displayed as 6 groups of 2 hexadecimal digits (or 3 groups of 4 hex digits with period separators). 
+	**Burned-in addresses**. IEEE gives each card manufacture a range of numbers, and they hard code every interface produced with a unique number from their range. The first six hex digits are known as the **organizationally unique identifier (OUI)**, identify the manufacture of the adapter. Last 6 digits are the serial number.
+	Organizations can use locally administered addresses rather than universal coding systems. This is defined by changing the U/L bit from 0 to 1. The rest is configured using the card driver or network management software. 
+	**Broadcast Address**. The I/G bit of a MAC address determines whether the frame is addressed to an individual node (0) or a group (1). The latter is used for broadcast and multicast transmissions. MAC address with all 1s of the broadcast address should be processed by all nodes within the same broadcast domain.
+
+### Ethernet Frame Format
+![[Pasted image 20240118100523.png]]
+**Preamble**. The preamble and the **start frame delimiter (SFD)** are used for clock synchronization and a part of the CSMA/CD protocol to detect collisions early. Preamble consists of 8 bytes (alternating 1s and 0s) and the SFD being two consecutive 1s at the end.
+
+**Error Checking**. The error checking field is a 32bit (4byte) checksum called **cyclic redundancy check (CRC)** or **frame check sequence (FCS)**. It's calculated based on the contents of the frame; if the receiving node performs the same calculation, and they match, it accepts the frame. No mechanism for retransmission if damage is found, this is found in protocol at higher layers.
+
+A standard Ethernet frame has a max length of 1518 bytes, excluding preamble. Each frame has a header composed of:
+	6byte destination MAC address field
+	6byte source MAC address field
+	2byte Ether type field
+Max size of the data payload is 1500bytes, also referred to the **maximum transmission unit (MTU)**. 
+Most gigabit and 10GbE Ethernet support jumbo frames with a larger MTU such as 9000 bytes. This is whoever not standardized and can cause compatibility issues.
+
+### Packet Sniffers and Taps
+A protocol analyzer allows inspection of traffic received by a host or passing over a network link. It depends on a packet sniffer, as its purpose is to capture frames moving over the network medium. 
+3 options for connecting a sniffer to a point in the network are:
+	**SPAN (switch port analyzer)** means that the sensor is attached to a specially configured port on the switch that receives copies of frames addressed to nominated access ports. Not fully reliable.
+	**Passive test access point (TAP)**. A box with ports for incoming and outgoing network cabling and an inductor/optical splitter that physically copies the signal from the cabling to a monitor port. No logic decisions are made so every frame, even corrupt, are sent to the monitor port (unlike a SPAN).
+	**Active TAP**. A powered device that performs signal regeneration, which is needed in some circumstances. Some gigabit signaling is complex for a passive tap to monitor. 
+
+**TCPDUMP**
+A packet capture utility for LINUX. Basic syntax is: tcpdump -i eth0
+Usually used with some filter expression:
+	Type: host, net, port, portrange
+	Direction: src, dst, host, network, port
+	Protocol: arp, icmp, ip, ip6, tcp, udp...
+For example, the following command filters frames to those with the source IP 10.1.0.100 and destination port 53 or 80:
+tcpdump -i eth0 "src host 10.1.0.100 and (dst port 53 or dst port 80)"
+
+**Wireshark**
+Open source graphical packet capture analysis utility. 
+
+### Ethernet Switches
+**Unmanaged vs managed** 
+	On a soho network, switches are usually unmanaged, standalone units that can be added to a network without any configuration (and sometimes built into router/modem). On corporate networks, switches are most likely managed, meaning switch settings can be configured. 
+**Stackable**
+	Switches that can be connected together and operate as a group, with the stack being managed as a single unit.
+**Modular vs fixed**. 
+	Fixed switch comes with a set number of ports and cannot be changed or upgraded, while a modular switch has slots for plug-in cards, meaning they can be configured with different numbers and types of ports.
+**Desktop vs rack mounted**
+	Simple unmanaged switches with 5-8 ports might be small freestanding units that can be placed on a desktop. Larger switches are designed to be fitted to the standard size racks that hold networking equipment.
+
+**Switch interface configuration**
+	Configuration of a managed switch can be performed at a CLI, allowing changes like command modes or hierarchies. 
+	{show config} displays the switch's configuration (with startup config being different from running config).
+	{show interface} lists the state of all interfaces or the specified interface, identified by type, slot, and port number. 
+
+Most switch interfaces are configured to use **auto-MDI/MDIX** by default. This means that the switch senses the configuration of the connected device and cable wiring and ensures that an MDI uplink to an MDIX port gets configured. This will also ensure a link if a crossover cable is used to connect an end system by mistake.
+
+Switches learn MAC addresses by reading the source address when a frame is received in a port. That address is cached in a MAC address table, implemented as a content addressable memory (CAM). If the MAC address cannot be found in there, the switch will act like a hub and flood all ports except source port. You can also query the MAC address table to find the addresses associated with ports.
+
+**Port security** configuration validates the MAC address of end systems that connect to a switch port. Unknown or frequently changing host MAC addresses might indicate an intrusion attempt. Port security configs have 2 elements: Specify a static MAC address or allow the port to learn and accept a certain number of sticky addresses. Specify an enforcement action when a policy violation is detected (ie alert only or shutdown port).
+
+**Port aggregation** means combining two or more cabled links into a single logical channel. Aka NIC teaming. Often implemented by the Link aggregation control protocol (LACP). Its used to auto-negotiate the bonded link between the switch ports and the end system, detect config errors, and recover from failure of a physical link.
+
+**Port Mirroring**. A switch only forwards unicast traffic only to the specific port connected to the intended destination interface. This prevents sniffing of unicast traffic by hosts on the same switch. Port mirroring allows for legitimate capturing and network traffic analysis. The mirrored port would be used by management or monitoring software, like a packet sniffer, network analyzer, or intrusion detection system (IDS).
+
+**Jumbo Frames**. Ordinarily, an Ethernet frame can carry a data payload or maximum transmission unit (MTU) of up to 1,500 bytes. A jumbo frame is one that supports a data payload of up to around 9,000 bytes. Critical that all hosts and appliances are configure to support them.
+
+**Flow Control**. Allows a server to instruct the switch to pause traffic temporarily to avoid overwhelming its buffer and causing it to drop frames.
+
+**PoE Power over Ethernet**. Supplying electrical power from a switch port over ordinary cabling to a connected, powered device, like a VoIP headset, IP camera, or WAP. 
+	802.3af: 13W over the link, 350mA@48V.
+	802.3at (PoE+) 25W
+	802.3bt (Ultra PoE) 51W (Type 3), or 73W (Type 4)
+	
+
 
 
 # Troubleshooting Ethernet Networks
+
+
+### **CompTIA troubleshooting methodology**
+1. **Identify the problem:**
+	Gather information.
+	Duplicate the problem, if possible.
+	Question users.
+	Identify symptoms.
+	Determine if anything has changed.
+	Approach multiple problems individually.
+2. **Establish a theory of probable cause:**
+	Question the obvious.
+	Consider multiple approaches.
+	Top-to-bottom/bottom-to-top OSI model.
+	Divide and conquer.
+3. **Test the theory to determine cause:**
+	Once theory is confirmed, determine next steps to resolve problem.
+	If theory is not confirmed, reestablish new theory or escalate.
+4. **Establish a plan of action to resolve the problem and identify potential effects.**
+5. **Implement the solution or escalate as necessary.**
+6. **Verify full system functionality, and if applicable, implement preventive measures.**
+7. **Document findings, actions, and outcomes.**
+
+### **Cable Connectivity Issues**
+
+In Ethernet terms, the **speed** is the expected performance of a link that has been properly installed to operate at 10 Mbps, 100 Mbps, 1 Gbps, or better. Speed is measured as a unit of time-typically milliseconds (ms)-and is also referred to as latency, or delay.
+The nominal bit rate will not often be achieved in practice. **Throughput** is an average data transfer rate achieved over a period of time excluding encoding schemes, errors, and other losses incurred at the physical and data link layers.
+Noise enforces limitations on this media, expressed as **signal to noise ratio (SNR).** Same with attenuation, which is expressed in decibels (dB).
+
+Cable issues are focused at the physical layer, layer 1. This includes the 
+	Network transceiver in host
+	patch cable between host and wall
+	structured cable between wall and patch
+	patch cable between patch panel and switch
+	network transceiver in switch port.
+Loopback tool can test for a bad port if the problem isnt within the patch cords.
+
+Another way to test cable problems is to check the link lights on the NIC and the switch/router port. Usually its:
+	Solid green: Link connected no traffic
+	Flickering green: Link operating normally with traffic
+	No light: not working/shut down port
+	Blinking amber: Fault has been detected (duplex mismatch, collisions)
+	Solid amber: port is blocked by spanning tree algorithm, prevents loops within switched network
+
+Most adapters and switches autonegotiate port settings, which could fail. You would have to set both to autonegotiate, or set them manually to work correctly with each other.
+
+**Cable testers**
+	A Cable tester reports detailed info on the physical and electrical properties of the cable. It can test and report cable conditions, crosstalk, attenuation, noise, resistance, etc... 
+	It might incorporate the function of a **time domain reflectometer (TDR)**. Its used to measure the length of a cable run and can locate open and short circuits, sharp bends, and other imperfections causing performance loss. It transmits a short signal pulse of known amp and duration down a cable and measures the corresponding amp and time delay with the resultant signal reflections.
+	
+You can use a **multimeter** to check physical connectivity in a copper cable, knowing the respective resistance. IE UTP ethernet cable is found to be 100 ohms, with any deviation meaning the cable has a break. Multimeters for computer networks have the function of a **wire map tester**. The base unit is connected to one end, and the remote unit to the other. When the test is activated, an LED for each wire conductor lights up in sequence, with no LED meaning a problem with the cable. 
+
+**Wire map testers** can find
+	Continuity (open)
+	Shorts (damaged wire)
+	Incorrect pin-out/termination/standards
+		Reversed Pair (conductors in a pair wired to different terminals)
+		Crossed pair (TX/RX reverse, with conductors from one pair connected to pins belonging to a different pair)
+
+**Network tone generator** and probe can be used to trace a cable from one end to another, useful when cables are bundled and not labeled.
+
+**Attenuation and interference**. If a cable link is too long, decibel loss (dB) may mean the link experiences problems with high error rates and retransmissions, causing reduced speeds and loss of connectivity. 
+
+**Crosstalk**. Usually indicates a problem with bad wiring, a bad connector, or improper termination. Various types of crosstalk can be measured:
+	**Near End (NEXT)**- measures crosstalk on the receive pairs at the transmitter end, cause by excessive untwisting of pairs or faulty bonding of shielding.
+	**Attenuation to Crosstalk Ratio, Near End (ACRN)**- The difference between insertion loss and NEXT. Equivalent to SNR. High value means signal is stronger than noise, with closer to 0 being high error rates.
+	**Attenuation to Crosstalk Ratio**, **Far End (ACRF)**- **Far end crosstalk (FEXT)** is measured on the receive pairs at the recipient end. Difference between insertion loss and FEXT, measures cable performance regardless of link length
+	**Power sum**- Gigabit and 10GbE use all 4 pairs. Confirms that a cable is suitable for this type of application.
+
+**Cable Application Issues**
+
+**Straight Through and Crossover Cables**. There are two main formats for patch cords:
+	Straight through-the cable is terminated with either T568A at both ends or T568B at both ends. This type of cable is used for an uplink (MDI port to MDIX port).
+In fact, crossover cable is no longer required for this type of application, as switches either have an uplink port for this purpose or can autodetect and select between a crossover and straight-through connection. This is referred to as auto-MDI/MDI-X. All Gigabit Ethernet ports support auto-MDI/MDI-X.
+
+**Rollover Cable/Console Cable**
+A console cable is used to connect a PC or laptop to the command line terminal of a switch or router. The console port connection on the appliance is a standard RJ-45 jack (but wired in a different way to Ethernet). A program such as PuTTY on the PC is used to establish the connection using the appropriate settings for the serial link.
+
+**Fiber Optic Cable Testing**
+Breaks can be found using a **optical time domain reflectometer (OTDR)**. It sends light pulses down the cable and times how long it takes for any reflections to bounce back from the break.
+An optical spectrum analyzer (OSA) is used with **wavelength division multiplexing (WDM)** to ensure each channel has sufficient power. OSA can determine whether existing cable is suitable for reuse with WDM and which wavelengths support the link distance required. 
+**Dirty optical cables** can cause a great reduction in signal strength or block transmission, usually found at the connecting end. It can be cleaned using solvent designed for fiber optic. Could also occur when cables are spliced.
+
+
 # IPv4 Addressing
 # Supporting IPv4 and IPv6 Networks
 # Configure and Troubleshoot Routers
+#NetworkPlus

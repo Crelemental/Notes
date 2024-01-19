@@ -1,4 +1,3 @@
-#Core2
 # Security Concepts
 - Create knowledge base support documentation to assist users and technicians with command-line management of the following Linux features:
 - Shell/terminal concepts and man help system.
@@ -13,3 +12,5 @@
 - Disk and file management (iCloud, Time Machine backups, Remote Disc, Disk Utility, and FileVault).
 - Network and devices settings (Displays, Networks, Printers, and Scanners).
 # Configuring SOHO Network Security
+
+#Core2

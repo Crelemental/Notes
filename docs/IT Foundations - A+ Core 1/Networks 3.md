@@ -1,4 +1,3 @@
-#Core1 
 ### Server Message Block
 
 **Server Message Block (SMB)** is the application protocol underpinning file and printer sharing on Windows networks. SMB usually runs directly over the TCP/445 port.
@@ -41,3 +40,4 @@ Many enterprise networks also use some sort of NAT, but another option is to dep
 
 A **supervisory control and data acquisition (SCADA)** system takes the place of a control server in large-scale, multiple-site ICSs. SCADAs typically run as software on ordinary computers, gathering data from and managing plant devices and equipment with embedded PLCs, referred to as "field devices." These embedded systems typically use WAN communications, such as cellular or satellite, to link the SCADA server to field devices.
 
+#Core1 

@@ -1,4 +1,3 @@
-#Core1 
 ### 1
 Variations of USB 3.x introduced new connector form factors and faster transfer rates than previous versions. USB 3.2 Gen 2x1 is capable of speeds up to 10 Gbps.
 
@@ -155,4 +154,4 @@ or LED
 445 – Server Message Block (SMB)/Common Internet File System 
 3389 – Remote Desktop Protocol (RDP)
 
-![[Pasted image 20231026142117.png]]
+![[Pasted image 20231026142117.png]]#Core1 
