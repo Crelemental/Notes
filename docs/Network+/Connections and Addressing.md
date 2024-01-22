@@ -208,7 +208,6 @@ Switches learn MAC addresses by reading the source address when a frame is recei
 
 # Troubleshooting Ethernet Networks
 
-
 ### **CompTIA troubleshooting methodology**
 1. **Identify the problem:**
 	Gather information.
@@ -292,6 +291,283 @@ An optical spectrum analyzer (OSA) is used with **wavelength division multiplexi
 
 
 # IPv4 Addressing
+
+The Internet Protocol (IP) header contains fields to manage the logical addressing and forwarding function. ![[Pasted image 20240120205648.png]]
+Version field indicates the version of IP in use, while the Length fields indicate the size of the header and total packet size. Protocol field describes what is contained in the payload so the receiving host knows how to process it. For most packets, TCP/6 or UDP/17 while be indicated in the protocol field. 
+Some protocols that directly run on IP would be
+	ICMP/1 - internet control message protocol
+	IGMP/2 - internet group management protocol
+	GRE/47 - generic routing encapsulation
+	ESP/50 - encapsulating security payload + AH/51 - authentication header
+	EIGRP/88 - enhanced interior gateway routing protocol + OSPF/89 - open shortest path first
+
+An IP address provides 2 pieces of information:
+	Network Number (ID) - common to all hosts on the same IP network
+	Host Number (ID) - identifies a host within an IP network
+
+An IPv4 address is 32bits long, with it divided into 4 groups of 8 bits, known as octets. It uses a dotted decimal notation, with each octet being a decimal number (rather than bits).
+11000110 00110011 01100100 00000001
+198           .51             .100           .1
+
+### Network Masks
+IP addresses represent both network and host IDs. A 32 bit network mask is used to distinguish between these 2 components in a single IP address. The mask conceals the host ID portion of the IP address and reveals the network ID portion.
+
+Whenever there's a binary 1 in the mask (255), that corresponding binary digit in the IP address is part of the network ID.
+
+so 255.255.255.0 as the network mask for the IP address of 198.51.100.1 means that 198.51.100.0 is the network ID. The only difference between the two is the last digit, which is not masked.
+
+Instead of a dotted decimal mask, this network can be identified with a prefix or slash notation. The prefix is simply the number of bits set to 1 in the mask. So that network can be referred to as 198.51.100.0/24
+
+A long netmask like 255.255.255.0 allows for more network IDs within the overall internetwork, but less hosts per network. A short netmask like 255.0.0.0 allows for millions of hosts per network, but only 126 network addresses. The limit is set by Class A addresses using the default Class A subnet.
+
+### Subnet Masks
+The scheme of using whole octet boundaries is inflexible, so a system of dividing networks into subnetworks or subnets was made.
+
+**Subnet addressing** has 3 levels: a network ID, subnet ID, and host ID. To create logical subnets, bits from the host portion of the IP address must be allocated as a subnet address rather than part of the host ID. The subnet ID lies within an octet boundary.![[Pasted image 20240120212911.png]]
+Only leaves 4 bits for the Host ID range
+
+Network ID and subnet ID use different masks. The mask for the whole network is still 255.255.255.0. Hosts within the network use the subnet mask 255.255.255.240. Only one mask is applied to the IP address. Mask containing subnet info is only used *within* the IP network, while external IP networks use the netmask. 
+
+### Host address ranges
+
+IP network 198.51.100.0/24 allows for 254 possible host IDs. 8 bits can express 256 values, but the first is the network address, and the last is the broadcast address.
+Using some of these 8 host bits as a subnet ID creates extra networks, but each of those subnets has fewer host addresses. ![[Pasted image 20240120213709.png]]
+The purpose of subnetting is to create layer 3 broadcast domain segments with fewer hosts. Trick its to fit the scheme to the requirements for number of subnetwork and hosts per subnet. Each bit added to the mask halves the number of host addresses.
+
+**Forwarding at layer 3 is referred to as routing, while forwarding at layer 2 is described as switching.**
+![[Pasted image 20240120214613.png]]
+
+If the masked portions of the source and destination IP addresses match then its assumed to be on the same IP network or subnet. Like 198.51.100.17 and 198.51.100.19 with a mask of 255.255.255.240. It will try to deliver the packet locally. If it doesn't match, the IP assumes the packet must be router to another IP network.
+
+When the destination IPv4 address is on a different IP network or subnet, the host forwards the packet to its default gateway rather than delivering locally. **Default gateway** (*IP configuration parameter that identifies the address of a router on the local subnet that the host can use to contact other networks*) is a router configured with a path to remote networks.
+
+Router determines what to do with the packet by performing the same comparison between the source and destination address and netmask. Using its routing table, it determines which interface to use to forward the packet. Paths to other IP networks can be manually configured in the routing table or learned by a dynamic routing protocol.
+
+### ARP (address resolution protocol)
+The TCP/IP suite includes ARP to perform the task of resolving an IP address to a hardware address.
+When both sending and receiving hosts are within the same broadcast domain or subnet, local address resolution takes place using ARP requests and ARP replies
+
+### Unicast and Broadcast addressing-- Multicast and Anycast addressing
+When an IPv4 host wants to send a packet to a single recipient, it uses a **unicast**packet, addressed to the IP address of the destination host.
+One means of addressing multiple hosts is to perform a broadcast. A broadcast can be performed by sending a packet to the network or subnet's broadcast address.
+
+IPv4 multicasting allows one host on the Internet (or private IP network) to send content to other hosts that have identified themselves as interested in receiving the originating host's content. The Internet Group Management Protocol (IGMP) is typically used to configure group memberships and IP addresses. **Anycast**means that a group of hosts are configured with the same IP address.
+
+### VLANs and Subnets
+If too many hosts are attached to the same switch, broadcast traffic becomes excessive and reduces performance. At layer 2, VLANs fix that. Each interface on a managed switch can be given a VLAN ID. This means that different groups of computers on the same cabling and on the same switches can appear to be in separate LAN segments.
+
+At layer 3, subnetting is the process of logically dividing an IP network into smaller subnetworks, with each subnet having a unique address. Subnets can represent the VLAN design in layer 3 topology.
+
+### Classful addressing
+![[Pasted image 20240120222428.png]]
+![[Pasted image 20240120222450.png]]
+You can identify the address class from the first octet of the IP address.
+Netmask for classful addressing
+- Class A: 255.0.0.0 (/8)
+- Class B: 255.255.0.0 (/16)
+- Class C: 255.255.255.0 (/24)
+
+### Public vs private addressing
+
+Private IP addresses can be drawn from the pools of addresses defined in RFC 1918 as non-routable over the internet
+* 10.0.0.0 to 10.255.255.255 (Class A private address range).
+- 172.16.0.0 to 172.31.255.255 (Class B private address range).
+- 192.168.0.0 to 192.168.255.255 (Class C private address range).
+
+**APIPA | Automatic private IP addressing**
+Autoconfiguration on an IPv4 network usually means using a **DHCP (Dynamic Host Configuration Protocol)** server. APIPA was designed by Microsoft so that clients that couldn't connect to a DHCP server could communicate on the local network anyway. If a host doesn't receive a response from a DHCP server within a time frame, it selects a random address from 169.254.1.1 to 169.254.254.254.
+
+**Other reserved address ranges**
+- Class D addresses (224.0.0.0 through 239.255.255.255) are used for multicasting.
+- Class E addresses (240.0.0.0 through 255.255.255.255) are reserved for experimental use and testing.
+
+127.0.0.0 to 127.255.255.255 is reserved to configure a loopback address, which is a special address used to check if TCP/IP is correctly installed on the local host. Usually configured on hosts as 127.0.0.1
+
+OTHER:
+- **0.0.0.0/8** - Used when a specific address is unknown. This is typically used as a source address by a client seeking a DHCP lease.
+- **255.255.255.255** - Used to broadcast to the local network when the local network address is not known.
+- **100.64.0.0/10, 192.0.0.0/24, 192.88.99.0/24, 198.18.0.0/15** - Set aside for a variety of special purposes.
+- **192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24** - Set aside for use in documentation and examples.
+
+**The following factors must be weighed when planning an IPv4 network addressing scheme:**
+- The number of IP networks and subnetworks required.
+- The number of hosts per subnet that must be supported.
+- The network ID must be from a valid public or a private range (not from the loopback, link local reserved range, multicast range, or reserved/experimental range, for instance).
+- The network and/or host IDs cannot be all 1s in binary-this is reserved for broadcasts.
+- The network and/or host ID cannot be all 0s in binary; 0 means "this network."
+- Each host ID must be unique on the IP network or subnet.
+- The network ID must be unique on the Internet (if you are using a public addressing scheme) or on your internal system of internetworks (if you are using a private addressing scheme).
+![[Pasted image 20240120223549.png]]
+
+
+
 # Supporting IPv4 and IPv6 Networks
+### Tools to test IP configuration
+IP configuration values are assigned statically or dynamically. Most hosts are configured to obtain an address automatically, using DHCP services.
+In windows, each ethernet adapter is assigned a name. IP configuration for each adapter interface is often set using the GUI properties via the network connections applet. However you can configure interfaces using `netsh` commands.
+`netsh interface ip set address "Ethernet" dhcp`
+`netsh interface ip set address "Ethernet" static 10.1.0.1 255.255.255.0 10.1.0.254`
+Also you can use netsh to report IP config
+`netsh interface ip show config`
+
+Using powershell, the `Get-NetAdapter or Get-NetIPAddress` work to query configs. `New-NetIPAddress or Set-NetIPAddress` can make new and modify configs.
+
+**IPCONFIG**
+`ipconfig` displays the IP address, subnet mask, default gateway, for all network interfaces
+`ipconfig /all` displays complete TCP/IP config parameters for each interface, including if DHCP is enabled for the interface and the hardware MAC address
+`ipconfig /renew [interface]` forces a DHCP client to renew the lease it has for an IP address
+`ipconfig /release [interface]` releases the IP address given by the DHCP server so that the interface will no longer have an IP address
+`ipconfig /displaydns` displays the DNS resolver cache
+`ipconfig /flushdns` clears the DNS resolver cache
+`ipconfig /registerdns` registers the host with a DNS server
+
+**IFCONFIG and IP**
+On linux, ethernet interfaces are usually eth0, eth1, eth2, etc... 
+`ifconfig` is part of legacy net-tools package. 
+`ip` command had options for managing routes as well as local interface configuration. Basic reporting of ifconfig can be done by running `ip addr`, with `ip addr show dev eth0` for a single interface only.
+`ip  link` shows the status of interfaces
+`ip -s link` reports interface statistics
+
+**ARP cache utility**
+ARP is used by hosts to determine which MAC address is associated with and IP address on the local network. Queries are sent as broadcasts, which generate traffic on a network, reducing performance. Results are cached in an ARP table. 
+`arp` can be used to perform functions related to the ARP table cache.
+`arp -a | or -g` shows the ARP cache contents
+`arp -s [ip address][MAC address]` adds an entry to the ARP cache.
+`arp -d *` deletes all entries in the ARP cache
+
+`ip neigh` on Linux shows entries in the local ARP cache
+
+**ICMP and Ping**
+ICMP is used to report errors and send messages about the delivery of a packet. It can be used to test and troubleshoot connectivity issues on IP networks. The `ping` utility sends a configurable number and size of ICMP request packets to a destination host. Both on linux and windows hosts. 
+Basic connectivity test is done with `ping [ip address]`. If successful, output shows reply from ip address, and the time it takes for the response to arrive. RTT (round trip time) can be used to diagnose latency problems.
+TTL (time to live) IP header field is reduced by one every time a packet is forwarded by a router (hop). TTL output field shows the value of the counter when the packet arrived at its destination. 
+
+### Troubleshoot IP networks
+1. Ping the loopback address (ping 127.0.0.1) to verify TCP/IP is installed and loaded correctly. If this fails, reinstall the network protocol stack.
+2. Ping the IP address of the local host to verify it was added correctly and to verify that the network adapter is functioning properly. If you cannot ping your own address, there might have been a configuration error, or the network adapter or adapter driver could be faulty.
+3. Ping the IP address of the default gateway to verify it is up and running and that you can communicate with another host on the local network.
+4. Ping the IP address of other hosts on the same subnet to test for local configuration or link problems.
+	If a local host cannot be pinged and the error is destination unreachable, then verify the IP configuration does not contain an incorrect IP address or netmask. If these are correct but pings still time out, suspect either a security issue (such as a switch port security issue) or a problem at the data link or physical layer.
+5. Ping the IP address of a remote host to verify you can communicate through the router. If a remote IP address cannot be contacted, check the default gateway parameter on the local host to rule out an incorrect gateway issue. If the gateway is configured correctly and you can ping the router, you need to start investigating the routing infrastructure.
+### IPv4 vs IPv6
+Inefficiencies in the addressing scheme and unceasing demand for more addresses means that the IPv4 address supply is exhausted.
+IPv6 provides a long term solution to the problem of address space exhaustion. Its 128 bit addressing scheme has space for 340 undecillion unique addresses. Allows for every person on the planet to have 4000 addresses.
+IPv6 consists of 2 or 3 elements: the main header (fixed length), one ore more optional extension headers, and the payload. 
+Other header fields are
+	Traffic Class - packet priority
+	Flow Label - QoS management like real time streams
+	Payload Length - length of the payload, with 0 meaning Jumbo payload
+	Next Header -  describes the next extension header or where payload begins
+	Hop Limit - replaces TTL field in IPv4 but performs same function
+
+**IPv6 address format**
+Contains 8, 16bit numbers (double octets), with each being 4 hex digits:
+`2001:0db8:0000:0000:0abc:0000:def0:1234`
+Canonical notation: double octet contains leading 0s, they can be ignored. Contiguous series of 0s can be replaced by a double colon. 
+`2001:db8::abc:0:def0:1234`
+
+IPv6 addresses are divided into 2 parts, the first 64bits are the network ID, while the 2nd 64bits designate a specific interface. Network addresses are written using classless notation, where /nn is the length of the network prefix in bits. IE prefix /48 and the same 48 bits of an IPv6 address, they're in the same IP network. This also means that they have 16 bits left in the network ID to subnet their network.
+
+`2001:db8:3c4d::/48`
+would represent a network address, while:
+`2001:db8:3c4d:0001::/64`
+would represent a subnet within that network address.
+![[Pasted image 20240121171254.png]]
+
+![[Pasted image 20240121171239.png]]
+The Neighbor Discovery (ND) protocol performs some of the functions on an IPv6 network that ARP and ICMP perform on IPv4. 
+	Address autoconfiguration
+	Prefix discovery - enables a host to discover the known network prefixes that have been allocated to the local segment. This facilitates next-hop determination. Prefix discovery uses router solicitation (RS) and router advertisement (RA) messages. An RA contains information about the network prefixes served by the router, information about autconfig options, plus information about link parameters (like MTU and hop limit).
+	Local address resolution - allows a host to discover other nodes and routers on the local network.
+	Redirection
+
+IPv6 uses a more flexible system of address autoconfiguration called stateless address autoconfiguration (SLAAC):
+- The host generates a link local address and tests that it is unique by using the Neighbor Discovery (ND) protocol.
+- The host listens for a router advertisement (RA) or transmits a router solicitation (RS) using ND protocol messaging. The router can either provide a network prefix, direct the host to a DHCPv6 server to perform stateful autoconfiguration, or perform some combination of stateless and stateful configuration.
+
+IPv6 uses an updated version of ICMP. The key new features are:
+- **Error messaging**-ICMPv6 supports the same sort of destination unreachable and time exceeded messaging as ICMPv4. One change is the introduction of a Packet Too Big class of error. Under IPv6, routers are no longer responsible for packet fragmentation and reassembly, so the host must ensure that they fit in the MTUs of the various links used.
+- **Informational messaging**-ICMPv6 supports ICMPv4 functions, such as echo and redirect, plus a whole new class of messages designed to support **Neighbor Discovery (ND)** and **Multicast Listener Discovery (MLD),** such as router and neighbor advertisements and solicitations.
+
+**Dual stack** hosts and routers can run both IPv4 and IPv6 simultaneously and communicate with devices configured with either type of address. Most modern desktop and server operating systems implement dual stack IP.
+
+As an alternative to dual stack, **tunneling** can be used to deliver IPv6 packets across an IPv4 network. Tunneling means that IPv6 packets are inserted into IPv4 packets and routed over the IPv4 network to their destination. Routing decisions are based on the IPv4 address until the packets approach their destinations, at which point the IPv6 packets are stripped from their IPv4 carrier packets and forwarded according to IPv6 routing rules. This carries a high protocol overhead and is not nearly as efficient as operating dual stack hosts.
+
+IPv6 Address Prefixes
+![[Pasted image 20240121173831.png]]
+
 # Configure and Troubleshoot Routers
+
+**Routing tables and path selection**
+Information about the location of other IP networks and hosts is stored in the routing table. Each entry shows the route to a destination network or host. The parameters that define it are:
+	Protocol - source of the route
+	Destination - generally directed to network IDs than specific hosts
+	Interface - local interface used to forward a packet along the chosen route. Represented as the IP address or as a layer 2 interface ID
+	Gateway/next hop - The IP address of the next router along the path to the destination
+
+**Static and default routes**
+Routing tables fall into 4 categories
+	Direct network routes, for subnets the router is attached to 
+	Remote network routes, for subnets and IP networks not directly attached
+	Host routes, for routes to a specific IP address
+	Default routes, which are used when an exact match for a network or host aren't found
+
+Directly connected routes
+	The IP network or subnet for each active router interface is automatically added to the routing table.
+
+Static routes
+A static route is manually added to the routing table and only changes if an admin edits it. 
+
+Default routes
+A default route is a special type of static route that identifies the next hop router for a destination that cannot be matched by another routing table entry. 0.0.0.0/0 or ::/0 represents the default route. 
+
+**Fragmentation**
+	Most systems try to avoid IP fragmentation, which is the mechanism for splitting a layer 3 datagram between multiple frames to fit the MTU of the underlying Data Link network. IPv6 doesn't allow routers to do it all together. 
+
+**Dynamic routing protocols**
+A dynamic routing protocol uses and algorithm and metrics to build and maintain a routing information database. It stores info about the networks to which the router is connected and where there are multiple paths, prioritizes one over the rest. Information can be shared with the router's neighbors.
+
+Topology and metrics
+Most algorithms are classed as either distance vector or as link state. Some are a hybrid of different methods. The path with the lowest cost metric is preferred. The type of algorithm determines the factors that are used to calculate that metric
+
+Convergence
+The process whereby routers running dynamic routing algorithms agree on the network topology. Routers must be able to communicate changes to other routers to avoid black holes and loops. *black hole means discarded packet without notification to the source, loop causes a packet to be forwarded around the network until TTL expires*
+Network with all routers sharing the same topology is described as steady state.
+
+**Interior vs exterior gateway protocols**
+A network under admin control of a single owner is an autonomous system (AS). An interior gateway protocl (IGP) is one that identifies routes within an AS.
+
+An exterior gateway protocol (EGP) is one that can advertise routes between ASs. An EGP includes a field to communicate the network's AS ID and allows network owners to determine whether they can use paths through another org's network.
+![[Pasted image 20240122105032.png]]
+
+RIP (Routing information protocol) is a distance vector routing protocol. It only considers 1 piece of info, the next hop router to reach a given network or subnet. Uses lowest hop count to determine route. RIP sends updates to neighboring routers of its database every 30s.  
+- RIPv1 is a classful protocol and uses inefficient broadcasts to communicate updates over UDP port 520.
+- RIPv2 supports classless addressing and uses more efficient multicast transmissions over UDP port 520. It also supports authentication.
+- RIPng (next generation) is a version of the protocol designed for IPv6. RIPng uses UDP port 521.]
+
+Enhanced IGRP (EIGRP) made to solve lack of support for classless addressing and other limitations. Classed as an advanced distance vector or hybrid routing protocol. The 2 default elements are 
+	Bandwidth -  applies a cost based on the lowest bandwidth link in the path
+	Delay - applies a cost based on time it takes for a packet to traverse the link
+Only send updates when it first establishes contact or when there's a topology change. 
+
+**OSFP**, Open shortest path first, is the most widely adopted link state protocol.![[Pasted image 20240122110422.png]]
+
+**BGP**, Border gateway protocol, designed to be sued between routing domains in a mesh internetwork, and used as a routing protocol between ISPs. BGP works with classless network prefixes called Network Layer Reachability Information (NLRI). Path selection is based on multiple metrics, including hop count, weight, local preference, origin, and community. BGP is not a pure distance vector algorithm. In fact, BGP is more usually classed as a path vector routing protocol.
+
+An administrative distance (AD) value is used to express the relative trustworthiness of the protocol supplying the route.![[Pasted image 20240122110657.png]]
+
+### Troubleshoot routers
+**Edge routers**
+Placed at the network perimeter, distinguished by external and internal interfaces. They can perform framing to repackage data from the private LAN frame format to the WAN internet access frame format. Customer's router is the customer edge CE, while service provider's router is provider edge PE.
+Edge routers designed to work with DSL or cable broadband access methods are SOHO routers. 
+Routers designed to service medium to large networks are complex and expensive appliances. They feature specialized processors to handle the routing and forwarding processes, and memory to buffer data.
+
+**Internal routers**
+Has no public interfaces. Positioned to implement whatever network topology required. Traffic between local subnets are controlled by separate internal routers.
+Many networks are segmented using VLANs feature of managed switches. Traffic between VLANs must be routed. A router connected to a trunk port on a switch can carry all the VLAN to VLAN traffic that must be routed. The router's physical interface is configured with multiple sub-interfaces or virtual interfaces. Each is configured with a specific VLAN ID. 
+Layer 3 capable switches are optimized for routing between VLANs. It can  use static and dynamic routing to identify which VLAN an IP address should be forwarded to. 
+
+`router` command is used to view and modify the routing table of end system Windows and Linux hosts. 
+`traceroute` supported on Linux and router OSes shows an output of number of hops, and the IP address of the ingress interface of the router or host, and time taken to respond to each probe.
+`tracert` on a windows systems, same function as traceroute. 
 #NetworkPlus
