@@ -1,0 +1,2295 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Printers%20etc/">
+      
+      
+        <link rel="next" href="../../Network%20and%20Security%20Foundations/Network%20Security%20Operations/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>Note taking - Crelementals notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Crelementals notes" class="md-header__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Crelementals notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Note taking
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Crelementals notes" class="md-nav__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Crelementals notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crelemental's Notes!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Critical Thinking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Critical Thinking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Critical%20Thinking/Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentals of Information Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals of Information Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Assessing%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assessing Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Auditing%20and%20Accountability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditing and Accountability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Authorization%20and%20Access%20Control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authorization and Access Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Human%20Element%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITSec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Identification%20and%20Authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identification and Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Laws%20and%20Regulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laws and Regulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Mobile%2C%20Embedded%2C%20and%20IOT%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mobile, Embedded, and IOT Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Network%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operating%20System%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operating System Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operations%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operations Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Physical%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Physical Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/What%20is%20information%20security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is information security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ISC2 SSCP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ISC2 SSCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Access%20Controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Incident%20Response%20and%20Recovery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incident Response and Recovery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Network%20and%20Communications%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network and Communications Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Risk%20Identification%2C%20Monitoring%2C%20and%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification, Monitoring, and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Sec%20Ops%20and%20Administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sec Ops and Administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Systems%20and%20Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systems and Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Applications   A+ Core 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            IT Applications   A+ Core 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Operating%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Software%20Troubleshooting%20and%20Operational%20Procedures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing Security Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Study%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Study Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Foundations   A+ Core 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IT Foundations   A+ Core 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mobile%20Devices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PCS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Printers%20etc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Note taking
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Note taking
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      11
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      13
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      14
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      15
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      16
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      17
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      18
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      19
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      20
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      21
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      22
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      23
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXTRA
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network and Security Foundations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Network and Security Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Network%20Security%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firewalls, IDS, IPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Networking%20Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP/IP and OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Networking%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Sec Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Network+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Applied%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Connections%20and%20Addressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OSI Model #OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Network%20Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Topologies and Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Security+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Incidents%20and%20Investigations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incidents and Investigations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Networks%20and%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks and Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Secure%20and%20Resilient%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure and Resilient Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Securing%20Information/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securing Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Securing%20Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securing Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      11
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      13
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      14
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      15
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      16
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      17
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      18
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      19
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      20
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      21
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      22
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      23
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      EXTRA
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Note taking</h1>
+
+<h3 id="1">1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>Variations of USB 3.x introduced new connector form factors and faster transfer rates than previous versions. USB 3.2 Gen 2x1 is capable of speeds up to 10 Gbps.</p>
+<p>The USB 3.2 Gen 1 Superspeed USB standard is capable of up to 5 Gbps. The legacy designation of this standard is USB 3.0.</p>
+<p>The USB 3.2 Gen 2x2 Superspeed USB is capable of 2 x 10 Gbps. While other standards can use a variety of connector types, this standard strictly uses USB-C.</p>
+<p>USB 2.0 is a high speed standard that specifies a data rate of 480 Mbps that is shared between all devices attached to the same controller.</p>
+<h3 id="2">2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>DVI-I is a technology that is capable of connecting a digital source to an analog display or an analog source to a digital display. A VGA to DVI-I cable will connect your digital computer to an analog monitor.</p>
+<h3 id="3">3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>A technician suggests purchasing a new computer that features CMP capabilities to handle the user's workload. 
+    chip level multiprocessing (CMP).
+    1. Multiple processing cores combined in the same package</p>
+<h3 id="4">4<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>Since the data scientist needs speed and computing power and is not concerned about data loss, RAID 0 is the best option. RAID 0 uses striping and spreads data across all disks in the array, sacrificing redundancy for speed.</p>
+<p>RAID 1 uses mirroring with two disks. If one disk fails, the other takes over.</p>
+<p>RAID 5 uses striping with distributed parity, meaning all information is spread across all disks in the array so that if one disk fails, data can be reconstructed from the remaining disks.</p>
+<p>RAID 10 uses logical striping with two mirrored arrays. This configuration offers solid fault tolerance since a disk in each mirror can fail and the volume will still be available.</p>
+<h3 id="5">5<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>what are the three items that define a problem? (Select all that apply.)
+    Cause, Symptom, Consequence</p>
+<h3 id="6">6<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>no POST and no display
+    Check CPU
+    Check all non essentail devices
+    check all devices</p>
+<h3 id="7">7<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>Which setting does the engineer use to measure dBi?
+    Antenna gain is in dBI
+    Transmit power and EIRP is dBm</p>
+<h3 id="8">8<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p>An engineer plans a fiber cable implementation between two campus buildings about 50 kilometers apart. Due to the distance between the locations, the engineer selects single-mode fiber. What specifications does the engineer need to consider with this decision?
+    Single-mode fiber (SMF) has a small core (8-10 microns) and is designed to carry a long wavelength over long distances.</p>
+<h3 id="9">9<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<p>The 802.3af standard allows powered devices to draw up to about 13 W. Power is supplied as 350mA@48V and limited to 15.4 W. Usable wattage usually falls around 13 W.</p>
+<p>The 802.3at (PoE+) standard allows powered devices to draw up to about 25 W, with a maximum current of 600 mA.</p>
+<p>The 802.3bt (PoE++ or 4PPoE) supplies up to about 51 W (Type 3) or 73 W (Type 4) usable power.</p>
+<p>The 802.3 standard is an overall arching standard that covers Ethernet usage. While the implementation falls under 802.3, it is not specific to the application.</p>
+<h3 id="10">10<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<p>A MAC address consists of 48 binary digits, making it 6 bytes in size. MAC addresses are represented in hexadecimal and each hex digit represents half a byte.</p>
+<h3 id="11">11<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>To support such a legacy system on the network, what common port settings are enabled for communications?
+     137-139 NETBIOS</p>
+<h3 id="12">12<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>During the final stages of configuration, the systems administrator creates a policy within the Domain Name System (DNS) to handle authentication failures.
+     The Domain-based Message Authentication, Reporting, and Conformance (DMARC) framework ensures that SPF and DKIM are being utilized effectively. DMARC specifies a policy mechanism for senders to specify how authentication failures should be treated.</p>
+<h3 id="13">13<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>A department within an organization would like to share a specific set of files with external users from a Windows 10 system. The users will also need to save files as well. Which solution does the systems administrator configure without needing to directly require Windows permissions?
+    File Transfer Protocol-Secure (FTPS) allows a client to upload and download files from a network server. An FTPS server can be easily configured without the need for local user accounts.</p>
+<h3 id="14">14<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<p>Which protocol enables the ability for the printer to have an automatically populated address book.
+    The Lightweight Directory Access Protocol (LDAP) is a TCP/IP protocol used to query and update resources in an X.500 directory. It is widely supported in current directory products such as Windows Active Directory.</p>
+<h3 id="15">15<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<p>A switch is put in place on the edge of the network to protect the server and protect against unauthorized traffic. What role does the switch play in the implementation?
+    A network access server (NAS) or network access point (NAP) is an access appliance, such as a switch, access point, a firewall, or a VPN gateway. It is the device that a system makes a connection to in order to access a network.</p>
+<h3 id="16">16<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
+<p>Interference can cause port flapping too, (On top of Bad cabling and a Faulty port)</p>
+<h3 id="17">17<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
+<p>A security team at a company discovers that malware is rapidly moving from one virtual machine to another in a live environment. What security issue is occurring?
+    Virtual machine escaping (VM escaping) refers to malware running on a guest OS jumping to another guest or to the host system itself.</p>
+<h3 id="18">18<a class="headerlink" href="#18" title="Permanent link">&para;</a></h3>
+<p>Systems administrators deploy a virtualization solution that separates host resources for each instance at the operating system level. Which solution is running?
+    With a container, resource separation occurs at the OS level. The OS defines isolated containers for each user instance to run in. Each container is allocated CPU and memory resources, but the processes run through the native OS kernel.</p>
+<h3 id="19">19<a class="headerlink" href="#19" title="Permanent link">&para;</a></h3>
+<p>A company realizes that it needs to implement a management solution for mobile phones. Which solution is specific to the restriction of apps installed from a device’s app store?
+    Mobile application management (MAM) is part of an enterprise mobility management (EMM) suite that sets policies for apps that can process corporate data and prevents data transfer to personal apps. This type of solution configures an enterprise-managed container or workspace.</p>
+<h3 id="20">20<a class="headerlink" href="#20" title="Permanent link">&para;</a></h3>
+<p>A universal asynchronous receiver transmitter (UART) port was traditionally a physical serial port in a legacy system. In a modern mobile device, how can a UART be utilized? (Select all that apply.)
+    Bluetooth and USB</p>
+<h3 id="21">21<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>IT determines that the display uses a very early thin film transistor (TFT) technology and will replace the laptop. Which TFT technology does the display use?
+    In an early TFT implementation, twisted nematic (TN) crystals twist or untwist in response to the voltage level. This is the earliest type of TFT technology that can be in budget displays.</p>
+<h3 id="22">22<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>A user contacts a printer technician to report that every print job sent to a laser printer has lines of toner in the same location on every page that is printed. What does the technician suggest may need cleaning or replacing?
+    Marks that appear in the same place (referred to as repetitive defects) are often due to dirty feed rollers or a damaged or dirty photosensitive drum.</p>
+<h3 id="23">23<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>The office laser printer starts printing pages that smudge easily. The IT specialist is proficient in the common printing defects of laser printers and knows what is causing the problem. What will the IT specialist do to fix the problem?
+    The IT specialist will replace the fuser because smudging print indicates that the toner is not fusing to the paper.</p>
+<h3 id="24">24<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<p>![[Pasted image 20231023142905.png]]</p>
+<p>![[Pasted image 20231024125159.png]]![[Pasted image 20231024130946.png]]
+![[Pasted image 20231024132737.png]]</p>
+<p>![[Pasted image 20231024134751.png]]![[Pasted image 20231024134816.png]]![[Pasted image 20231024134822.png]]</p>
+<h3 id="extra">EXTRA<a class="headerlink" href="#extra" title="Permanent link">&para;</a></h3>
+<p>A <strong>hardware compatibility list</strong> (HCL) is a list of computer hardware (typically including many types of peripheral devices) that is compatible with a particular operating system or device management software.</p>
+<p><strong>SAN</strong>. <strong>SAN</strong>. A dedicated local network consisting of devices providing data access is called:</p>
+<p><strong>Hardware Abstraction Layer (HAL)</strong>: A layer of programming that allows a computer OS to interact with a hardware device at a general or abstract level. The OS communicates with the HAL, which activates the necessary hardware.</p>
+<p>Examples of computer languages that describe the appearance of a printed page include: (Select 2 answers)
+    PostScript (PS)
+    PCL</p>
+<p><strong>Automatic Document Feeder (ADF)</strong> Which MFP feature optimizes processing of multi-page documents?</p>
+<p>Which step of the laser printer imaging process requires troubleshooting when a printer produces double/echo images (a.k.a. ghost images) on the output pages?
+    Cleaning</p>
+<p><strong>Display Types</strong>
+TN- High response times, Small viewing angle, brigher
+IPS- Good color, better viewing angle
+VA- common choice
+OLED- no backlight, better contrast, less light than LED
+Backlight can be CCFL (Code Cathode Flourescent Lamp)
+or LED </p>
+<p><strong>Ports and protocols -</strong> 
+20/21 – File Transfer Protocol (FTP) - 
+22 – Secure Shell (SSH) - 
+23 – Telnet - 
+25 – Simple Mail Transfer Protocol (SMTP) - 
+53 – Domain Name System (DNS) - 
+67/68 – Dynamic Host Configuration Protocol (DHCP) - 
+80 – Hypertext Transfer Protocol (HTTP) - 
+110 – Post Office Protocol 3 (POP3) - 
+137/139 – Network Basic Input/ Output System (NetBIOS)/ NetBIOS over TCP/IP (NetBT) - 
+143 – Internet Mail Access Protocol (IMAP) - 
+161/162 – Simple Network Management Protocol (SNMP) - 
+389 – Lightweight Directory Access Protocol (LDAP) - 
+443 – Hypertext Transfer Protocol Secure (HTTPS) - 
+445 – Server Message Block (SMB)/Common Internet File System 
+3389 – Remote Desktop Protocol (RDP)</p>
+<p>![[Pasted image 20231026142117.png]]#Core1 </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

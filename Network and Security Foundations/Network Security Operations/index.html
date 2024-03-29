@@ -1,0 +1,1992 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../IT%20Foundations%20-%20A%2B%20Core%201/note%20taking/">
+      
+      
+        <link rel="next" href="../Networking%20Concepts/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>Firewalls, IDS, IPS - Crelementals notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#firewalls-ids-ips" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Crelementals notes" class="md-header__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Crelementals notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Firewalls, IDS, IPS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Crelementals notes" class="md-nav__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Crelementals notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crelemental's Notes!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Critical Thinking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Critical Thinking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Critical%20Thinking/Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentals of Information Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals of Information Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Assessing%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assessing Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Auditing%20and%20Accountability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditing and Accountability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Authorization%20and%20Access%20Control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authorization and Access Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Human%20Element%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITSec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Identification%20and%20Authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identification and Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Laws%20and%20Regulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laws and Regulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Mobile%2C%20Embedded%2C%20and%20IOT%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mobile, Embedded, and IOT Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Network%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operating%20System%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operating System Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operations%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operations Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Physical%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Physical Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/What%20is%20information%20security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is information security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ISC2 SSCP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ISC2 SSCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Access%20Controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Incident%20Response%20and%20Recovery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incident Response and Recovery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Network%20and%20Communications%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network and Communications Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Risk%20Identification%2C%20Monitoring%2C%20and%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification, Monitoring, and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Sec%20Ops%20and%20Administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sec Ops and Administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Systems%20and%20Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systems and Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Applications   A+ Core 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            IT Applications   A+ Core 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Operating%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Software%20Troubleshooting%20and%20Operational%20Procedures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing Security Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Study%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Study Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Foundations   A+ Core 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IT Foundations   A+ Core 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Mobile%20Devices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/PCS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Printers%20etc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/note%20taking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note taking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network and Security Foundations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Network and Security Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Firewalls, IDS, IPS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Firewalls, IDS, IPS
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firewalls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packet-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packet Filters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-level-gateways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit-Level Gateways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stateful-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stateful Inspection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ids-and-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDS and IPS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking%20Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP/IP and OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Sec Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Network+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Applied%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Connections%20and%20Addressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OSI Model #OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Network%20Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Topologies and Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Security+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Incidents%20and%20Investigations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incidents and Investigations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Networks%20and%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks and Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Secure%20and%20Resilient%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure and Resilient Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Securing%20Information/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securing Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Securing%20Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securing Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#firewalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firewalls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packet-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packet Filters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-level-gateways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit-Level Gateways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stateful-inspection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stateful Inspection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ids-and-ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDS and IPS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="firewalls-ids-ips">Firewalls, IDS, IPS<a class="headerlink" href="#firewalls-ids-ips" title="Permanent link">&para;</a></h1>
+<h3 id="firewalls">Firewalls<a class="headerlink" href="#firewalls" title="Permanent link">&para;</a></h3>
+<p>Network firewalls are barriers that intercept and inspect traffic moving from one area of the network to another. Firewalls come in many forms and function. Some might be physical appliances in data centers while some are virtual operating as VMs. Others known as host-based firewalls that operate as apps on workstations and servers. </p>
+<h3 id="packet-filters">Packet Filters<a class="headerlink" href="#packet-filters" title="Permanent link">&para;</a></h3>
+<p>A firewall that operates at Layer 3 and 4 of the OSI model (network and transport). That equates to IP address (layer3) and the TCP/UDP port (layer4) of the traffic passing through a firewall. They inspect ingress (incoming) and egress (outgoing) traffic and compare it to a database of packet filter rules that decides if it should allow or deny the traffic (forward or drop).
+These firewalls only care about the address label (header) of the packets and don't inspect the contents of the payload, meaning dangerous payloads can pass if it comes from approved source and destination values.</p>
+<h3 id="circuit-level-gateways">Circuit-Level Gateways<a class="headerlink" href="#circuit-level-gateways" title="Permanent link">&para;</a></h3>
+<p>A devices that operates as a middleman between 2 or more systems to help conceal the identity of the client and server. The gateway may change the IP and port number of traffic to allow 2 networks to communicate that otherwise couldn't. They're the foundation of network address translation (NAT) and port address translation (PAT), which are commonly used in firewalls to allow private IP address ranges to communicate on the internet.</p>
+<h3 id="stateful-inspection">Stateful Inspection<a class="headerlink" href="#stateful-inspection" title="Permanent link">&para;</a></h3>
+<p>Since TCP requires a ack packet in response to a syn packet, there would have to be at least 2 firewall rules: allowing the sender to send data to the recipient, and one that allows the recipient to respond back to the sender. This would require many rules for many recipients. Firewall vendors implemented a feature called stateful inspection. It allows a firewall to identify traffic as conversational and automatically creates temporary firewall rules to permit the response traffic to flow back to the sender. So with this in place, you only need to create 1 rule in the firewall that allows communication to begin. (This is on layers 3 - 5  on the OSI model).</p>
+<h3 id="application-level">Application Level<a class="headerlink" href="#application-level" title="Permanent link">&para;</a></h3>
+<p>Proxy servers could act as a middleman, reading and parsing traffic payloads, forwarding it to the destination if its safe. These types of firewalls are usually called application-aware firewalls, or Layer 7 firewalls because application is the 7th layer of the OSI model.</p>
+<h3 id="ids-and-ips">IDS and IPS<a class="headerlink" href="#ids-and-ips" title="Permanent link">&para;</a></h3>
+<p>These are advanced security solutions that can identify malicious traffic on a database of known behaviors and payload signatures. IDSs monitor the network to detect threats, while IPSs intercept and block threats.</p>
+<p>Both can operate in tap mode where they are attached as listening devices only, which works well for IDSs. </p>
+<p>IPSs must be configured in-line as it should be in the middle of a traffic stream. They can be the choke point in network systems, bridging the traffic while being invisible and inspect every packet coming through it. If it detects and anomaly, it can alert the admins or block the traffic immediately. When it blocks viruses and malware, its called reputation-based protection as it blocks it based on how often that file is found to have viruses. </p>
+<h1 id="osi-and-security">OSI and Security<a class="headerlink" href="#osi-and-security" title="Permanent link">&para;</a></h1>
+<h1 id="osi">OSI<a class="headerlink" href="#osi" title="Permanent link">&para;</a></h1>
+<h3 id="layer-1-physical">Layer 1: Physical<a class="headerlink" href="#layer-1-physical" title="Permanent link">&para;</a></h3>
+<p>A wired network using Cat6 cables might be prone to eavesdropping, while one with fiber optic cables isn't and would provide greater security. All physical vulnerabilities and threats can be Layer 1 risks, ie like locks on doors and server racks. If physical access is gained, it lowers effectiveness of other security measures in other layers.</p>
+<h3 id="layer-2-data-link">Layer 2: Data Link<a class="headerlink" href="#layer-2-data-link" title="Permanent link">&para;</a></h3>
+<p>Use of WPA2 or WPA3 wireless security with long and complex passphrases can lower the risk of brute force password crackers.
+Wired networks are susceptible to ethernet based attacks like <strong>ARP poisoning</strong>, which allows attackers to eavesdrop on all network traffic sent through an ethernet switch. The attacker sends ethernet frames that poison and overwhelm the switches FIB (forwarding information base) causing it to flood every port with every frame it receives. Using a packet sniffer with that can allow the attacker to analyze the received frames and gather info. An IPS is best defense against this.
+<strong>VLAN hopping</strong> attacks are also possible, as a misconfigured switch port in trunk mode would allow a hacker to send and receive traffic on any VLAN on the switch, allowing them to join a network normally not available to them if they get access to that computer (connected to the trunk port),</p>
+<h3 id="layer-3-network">Layer 3: Network<a class="headerlink" href="#layer-3-network" title="Permanent link">&para;</a></h3>
+<p>Where IP and ICMP protocols are. The ICMP protocol allows for echo-request and echo-reply used by the ping command, allowing for <strong>Ping attacks</strong>. These can be ping flood DoS attacks. Also a ping sweep attack can be used to detect which computers are online and therefore figuring out which are susceptible to attacks. Can be mitigated with packet-filtering firewalls. 
+Spoofing can happen on layer 2 and 3, as it can impersonate a person's computer IP (3) or MAC address (2). IPS systems are best to prevent this attack.</p>
+<h3 id="layer-4-transport">Layer 4: Transport<a class="headerlink" href="#layer-4-transport" title="Permanent link">&para;</a></h3>
+<p>TCP and UDP protocols live here. Services open TCP and UDP ports to allow themselves to receive incoming connections from other computers, like port 53 for DNS. An attacker can abuse this by using a <strong>port scanner</strong> that allows them to scan the victim's computer for open ports they can later attack. Use a packet filtering firewall to defend.</p>
+<h3 id="layer-5-session">Layer 5: Session<a class="headerlink" href="#layer-5-session" title="Permanent link">&para;</a></h3>
+<p>RPC (remote procedure call) is a protocol at layer 5 that is used by computers to execute functions and procedures on other computer, such as a server launching a program or print job. RPC has been the target for a while, but with regular patching its usually mitigated.</p>
+<h3 id="layer-6-presentation">Layer 6: Presentation<a class="headerlink" href="#layer-6-presentation" title="Permanent link">&para;</a></h3>
+<p>The translation and security layer between applications, allowing computers to encode and encrypt data. Encoding is writing data in a special manner ie like XML or GIF. Encrypting is done at this layer with TLS and the deprecated SSL protocol. Both protocols have been subject to attacks, with the main focus being a mitm attack where the attacker is in between the victim and the encrypted target (like a bank website). The attacker can impersonate the bank's web security by weakness in encryption or fooling the victim into a fake security certificate. Allows the attacker to see everything the victim does without encryption. Can be mitigated using application-layer proxies or an IPS.</p>
+<h3 id="layer-7-application">Layer 7: Application<a class="headerlink" href="#layer-7-application" title="Permanent link">&para;</a></h3>
+<p>Though you did use HTTPS to encrypt the data between the mobile application and the API, the application is not yet secure. You incorrectly assumed that the API would only receive requests from your mobile application, and therefore the API did not require any special login or authentication process before it forwards requests to the application server. You need to implement authentication between the mobile application and the API. Security professionals use a tool called a vulnerability scanner to detect problems and known bad code that result in vulnerabilities in your applications.</p>
+<h1 id="encryption-fundamentals">Encryption Fundamentals<a class="headerlink" href="#encryption-fundamentals" title="Permanent link">&para;</a></h1>
+<h3 id="symmetric-encryption">Symmetric Encryption<a class="headerlink" href="#symmetric-encryption" title="Permanent link">&para;</a></h3>
+<p>Single key. AES
+A KMS generates a key, and a master key. </p>
+<p>The sender and receiver must exchange the secret key with each other before encrypting data, in which then it is most vulnerable.
+Symmetric key ciphers are fast in how they can calculate the encryption and decryption sequences, making it ideal for large amounts of data.
+![[Pasted image 20240105104650.png]]</p>
+<h3 id="asymmetric-encryption">Asymmetric Encryption<a class="headerlink" href="#asymmetric-encryption" title="Permanent link">&para;</a></h3>
+<p>Two keys. SSL. TLS. IPsec
+Its hard to exchange keys prior to data transfer, so PKI (public key infrastructure) is relied upon.
+It allows two parties to exchange encrypted data without having first exchange a private/shared key with eachother. 
+Each side must create a public and private key. Once the pair is created, the public key is published to a public repository, whereas the private key is kept secret by the owner of the key. If you wish to send this person an encrypted file, you would retrieve their public key from the internet and then use it to encrypt the file. The only way to decrypt the file is to use the recipient’s private key, which should be stored in a very safe place.
+PKI can also be used for nonrepudiation and to verify the validity and integrity of data that was sent. Digital signature. The cipher block cant be decrypted if its altered after you signed it, therefore proving the data hasn't changed since you signed it.
+It takes lots of computational power to perform encryption on large blocks of data. Therefore there's use of hybrid solutions, combining both types of ciphers in bulk data encryption. ![[Pasted image 20240105105505.png]]</p>
+<h3 id="elliptic-curve-cryptography">Elliptic Curve Cryptography<a class="headerlink" href="#elliptic-curve-cryptography" title="Permanent link">&para;</a></h3>
+<p>Since PKI is based on mathematical formulas, modern computers can process these equations making the secrecy of the keys not so much. ECC, a new type of asymmetric key creation, uses algebraic structure of elliptic curves to create a key that's smaller than traditional keys, but harder to crack.</p>
+<p>![[Pasted image 20240105105841.png]]
+![[Pasted image 20240105105956.png]]</p>
+<h1 id="cloud-security">Cloud Security<a class="headerlink" href="#cloud-security" title="Permanent link">&para;</a></h1>
+<h3 id="data-classification-public-sensitive-restricted">Data classification: public, sensitive, restricted<a class="headerlink" href="#data-classification-public-sensitive-restricted" title="Permanent link">&para;</a></h3>
+<p>Retention policies dictate how long a piece of data should remain available, either in day-day storage or archive copies. Some data like financial transactions must be kept for extended periods of time. Public cloud providers can offer storage solutions that include data retention policies to protect data from erasure and then deleting when the retention period is over.</p>
+<h3 id="data-protection">Data Protection<a class="headerlink" href="#data-protection" title="Permanent link">&para;</a></h3>
+<p>Data is typically not auto backed up by the cloud provider. Same for private clouds. Always worth checking with the provider to determine if a backup exists and how often its created, how long its kept, and how you can retrieve it. 
+In a hybrid environment, you may consider backing up the public cloud data to the corporate datacenter. Expensive decision as the provider can charge network transfer fees for data leaving their cloud. You can opt to back up your private cloud to the public cloud as a cheaper solution. </p>
+<h3 id="encrypting-data-at-rest">Encrypting data at rest<a class="headerlink" href="#encrypting-data-at-rest" title="Permanent link">&para;</a></h3>
+<p>Strongly consider encrypting data at rest, even if you own the server/storage hardware. It provides a physical safeguard for your data as the data remains protected and inaccessible if physically removed.
+The key used to encrypt and decrypt thne data is called a Data Encryption Key (DEK). If an attacker obtains it, they can get access to all the encrypted data (or even alter it without your knowledge). 
+To avoid this, you can rotate the DEK regularly to limit the time it would be useful for an attacker. Another solution is to encrypt the DEK in the same way you encrypt the data. You use an asymmetric encryption key called a Key Encryption Key (KEK). You will store the encrypted DEK inside a key management server (KMS) that grants the key based on the validity of the KEK.  </p>
+<h3 id="encryption-of-data-in-transit">Encryption of Data in Transit<a class="headerlink" href="#encryption-of-data-in-transit" title="Permanent link">&para;</a></h3>
+<p>Even in private clouds, the prevalence of malware makes data encryption important to protect against data theft or the manipulation of data in transit. In the case of a hybrid cloud, the wide area network (WAN) link, which connects the private and public clouds, should also be encrypted.</p>
+<h3 id="application-security">Application Security<a class="headerlink" href="#application-security" title="Permanent link">&para;</a></h3>
+<p>When developing say a web app, and you require to collect credentials, consider using a auth service known as federated identity management. It allows users to auth to you app using federated identity servers at Google, Facebook, etc, where you already have an account.
+When google confirms that a user's identity is correct, they send the server a special token that uniquely identifies the user, but doesn't disclose information. </p>
+<h3 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h3>
+<p>You must determine who requires access to the data and the degree of access. Like data that everyone has access to but can't change. Always make sure to give users the least amount of privilege to perform duties. 
+In private clouds, you can assign permissions to data using internal security authorization controls, like windows file server permissions assigned to users/groups in AD. In public clouds, this might not be possible depending on the provider.
+Hybrid clouds, you should configure the public and private cloud providers to use the same IAM (identity and access management) configs. This would standardize user and group names across the clouds making it easier to assign permissions and removes risk of accidentally giving permissions to the wrong users.</p>
+<h3 id="network-security">Network Security<a class="headerlink" href="#network-security" title="Permanent link">&para;</a></h3>
+<p>Public facing servers on the internet always a exposed to attack and when compromised can allow an attacker to launch additional attacks inside the network. You should isolate these public acing servers when possible to minimize the possible damage an attack can have on a network. IE like a extranet which is a secured region of a private network where firewalls are config'd to carefully inspect traffic entering and leaving the network, and where IPSs can be implemented.
+You'll have to manage your cloud based servers. For a private cloud, you can perform the administration using a private network. However, for hybrid clouds, your public server should be behind a firewall and not reachable directly. Instead of opening remote admin ports or service to the internet, consider establishing a VPN or a WAN to your public cloud provider to allow you to manage it as you would in a private environment.</p>
+<h3 id="cloud-platform-security">Cloud Platform Security<a class="headerlink" href="#cloud-platform-security" title="Permanent link">&para;</a></h3>
+<p>Most platforms require authentication to prove your identity and include auth rules like IAM to control what you can access. Some allow for MFA to further verify identity. 
+When an application needs to access resources within a cloud provider, it uses a special string of characters known as API keys. You will have to configure the application to auth using the service account and API key rather than a username and password.
+Usually public cloud providers keep detailed audit logs of actions taken within their system to help you account for changes and to discover unauthorized use of credentials. Private clouds may or may not do this, depends on the governance policies.</p>
+<h3 id="clouds">Clouds<a class="headerlink" href="#clouds" title="Permanent link">&para;</a></h3>
+<p>Private Cloud
+    Scalable, single tenant clusters of computing, storage, and networking resources owned and maintained by a single company (usually located within a data center belonging to that company). Owner of the equipment bears all the responsibility for the hardware and physical security controls.
+Public Cloud
+    Hosted by companies, such as AWS, Azure, and GCP. Highly scalable, multi-tenant solutions in datacenters around the world. Providers generally responsible for physical security and hardware security concerns
+Hybrid Cloud
+    Combination of services running in both public and private clouds. Security concerns typically fall along the lines of the owners of the equipment, with the addition of the data link between the cloud networks (possibly maintained and secured by a 3rd party).</p>
+<h1 id="wireless-security">Wireless Security<a class="headerlink" href="#wireless-security" title="Permanent link">&para;</a></h1>
+<p>![[Pasted image 20240107132717.png]]
+3DES
+    A symmetric encryption algorithm that uses the DES algorithm 3 times in a row to encrypt data. DES can be compromised by brute force now in less than a day (56bit). 3DES is more complex but can still be compromised. Generally, its been phased out of use. </p>
+<p>AES
+    Advanced Encryption Standard, considered a very secure form of encryption today, but might not be with quantum computing and better computing power. Its used with 128, 192, or 256 bit keys. Longer keys are harder to crack but require more computing to encrypt data. Its a symmetric algorithm like DES. AES-NI (AES New Instructions) within the CPU allows it to process AES encryption at very fast speeds, near 10GB/s. Thus, allowing a computer to encrypt its wireless network traffic using AES and transmit it with minimal effect on performance.</p>
+<p>WEP
+     Wired Equivalent Privacy, one of the first wireless standards proposed by IEEE in 1997. Provides same level of security as a wired network for wireless networks. Key is either 10 or 26 hexadecimal digits (40 or 104 bit keys). Can be compromised in a day using brute force methods. All packets are encrypted with that key, very vulnerable. </p>
+<p>WPA
+    Wi-Fi Protected Access, and WPA2/WPA3 were defined by the Wi-Fi Alliance and IEEE. WPA was a bridge between the WEP standard and more secure IEEE 802.11i standard. 
+    WPA uses a variable length alphanumeric passphrase, which is 8-63 characters in length.
+    Utilizes TKIP, temporal key integrity protocol. TKIP gives WPA a significant security boost by generating a new 128bit key for every packet sent on the network. 
+    Flaws have been found over time leading to new standards.</p>
+<p>WPA2
+    Biggest difference between WPA2 and WPA was the mandatory support for Counter Mode Cipher Block Chaining Message Authentication Code Protocol (CCMP) (part of the AES standard now). It provided data confidentiality, authentication, and access control to the network.
+    Eventually had weaknesses that led to WPA3</p>
+<p>WPA3
+    It increased the minimum key strength to 192bit for enterprise mode connections, which are often used in organizations instead of the personal mode. 
+    WPA3 eliminated the use of a passphrase or key that allowed computers to join a personal mode network. In WPA3, all devices use Simultaneous Authentication of Equals (SAE) method to exchange the network key. It ensures the initial key exchange in personal mode is more secure by eliminating the need to tell others the key before joining the network.
+    WPA3 also implements perfect forward secrecy (PFS) that ensures if a key is compromised, that that key only affects data exchanged in that encryption session only.
+    Another improvement is the encryption of management frames, such as de-associating from the network (De-auth attack exploit). </p>
+<p>Ad-Hoc
+    All wireless communication is performed in a peer-peer fashion and doesnt require a WAP. Rarely used in homes or offices, but helpful in setting up a new device. Occasionally used to transfer files between devices.</p>
+<p>Infrastructure
+    WAP or a wireless router is sued to connect devices to the network. A WAP acts like an ethernet switch in wired networking and usually has a physical cable that connects it to the rest of the network. A wireless router is a WAP and a router combined into one, and is often used in home and small business environments to connect to the internet while also providing wireless connectivity to devices.</p>
+<p>The 802.1x security standard provides network access control at the port level, whether physical or wireless, and provides authentication standard based on Extensible Authentication Protocol (EAP). Auth is done using username/password but also with PKI (public key infrastructure) certificates.
+![[Pasted image 20240107141423.png]]
+It grants trusted network access by
+    1. Client requests access to network via WPA or wired ethernet switch and provides credentials.
+    2. The WAP or switch forward the request to a special authentication server running Remote Authentication Dial-in User Service (RADIUS) or EAP, which then it validates the credentials and determines the user's auth based on policies defined by a network admin.
+    3. If the credentials are validated and the user is authorized, the WAP or switch grant network access to the user.
+    4. If the user is not authenticated properly or doesn't have the auth to access the network, the WAP or switch will block network access to the user.
+802.1x can also check the version of AV or malware scanners on a computer, and if it's not to corporate standard, the network admin can configure a policy to limit network access, such as access to update the AV software.</p>
+<h3 id="wireless-attack-types">Wireless attack types<a class="headerlink" href="#wireless-attack-types" title="Permanent link">&para;</a></h3>
+<p>De-auth Attack
+    DoS attack where the attacker can force any client off of the network. The attacker doesn't need to be on the network they're attacking. It prevents access to the network, forces users to reconnect (spooofed AP possibly), and can be used to capture the 4way handshake of WPA to gain intelligence.</p>
+<p>Fake Access
+    An attacker sets up an illegitimate wireless network using their own WAP or even a cellular hotspot. They usually open this network without any security or auth to entice people in a hurry to connect to the rogue WAP.
+    When a victim joins the WAP, the attacker becomes privy to all the data the victim sends or receives. The attacker can also redirect data to a different location or modify contents of data. 
+    Users should use a VPN tunnel on their devices to connect to a VPN service in the office if needing to use unsecured networks. </p>
+<h1 id="user-auth-and-access-control">User Auth and Access Control<a class="headerlink" href="#user-auth-and-access-control" title="Permanent link">&para;</a></h1>
+<h3 id="aaa">AAA<a class="headerlink" href="#aaa" title="Permanent link">&para;</a></h3>
+<p>Authentication
+    The process of confirming a user's identity. A system can confirm this via usernames and passwords or with certificates, as in PKI. Microsoft AD is an example of an auth system that confirms the identity of users via passwords. Web browser uses certificates to validate the identity of websites.</p>
+<p>Authorization
+    Determines what the user has access to on a system. Its important to apply restrictive permissions to your data and to carefully secure access to servers and network devices. User could intentionally or accidentally gain access to confidential data with unrestricted access. </p>
+<p>Accounting
+    Auditing*. There's a need for accounting to verify that the restrictions you put in place are working as expected and there is not attempted or actual unauthorized access. It also includes verifying the correct access control settings on data files, providing a forensic trail after a security breach to figure out how an attacker got in, and what they accessed. The logs should be stored away from where auditing is so attackers cannot change them to hide their path. They should also be immutable to prevent anything from happening. </p>
+<h3 id="mfa">MFA<a class="headerlink" href="#mfa" title="Permanent link">&para;</a></h3>
+<p>Multi factor authentication, sometime called 2 factor authentication (2FA) is an optional but highly recommended add on to the authentication process.
+The whole point to MFA is that even if someone steals your password through social engineering or brute force attacks, they cannot access your device or data without the key fob or without your fingerprint or face. It makes it alot more difficult for a attacker to impersonate you and access your account.</p>
+<h1 id="device-hardening">Device Hardening<a class="headerlink" href="#device-hardening" title="Permanent link">&para;</a></h1>
+<h3 id="how-to-harden-devices">How to Harden Devices<a class="headerlink" href="#how-to-harden-devices" title="Permanent link">&para;</a></h3>
+<p>Change the device's password, and never leave it configured with the default password. Attackers can easily search the web and find the default password for any device ever made. </p>
+<p>Remove unnecessary logins. Those accounts that are not used by you (at home) or the network admin team. Periodically review the list of authorized users on each device and remove those that no longer need access. Also check for any unrecognized accounts that are on the device as well and remove any that are found.</p>
+<p>Enforce a strong password policy. Enforce this through the device's operating system, if not the company policy for everyone. Can be done through a tool like Microsoft AD. Each user should be required to change their password frequently (30-90 days) to further limit damage if something is compromised. Check reports if possible on when the last time passwords are changed to enforce this. Also configure MFA if possible for every user. </p>
+<p>Remove unnecessary services. Disable or remove them to reduce risk of attack that service opens up. </p>
+<p>Keep patches up to date. Keep it up to date on the latest security update so that attackers cant exploit a security flaw. </p>
+<p>Limit physical access to the device. If someone has physical access to a device, they can break into it if given enough time. Observe the people that physically interact with these devices as they usually have reset buttons an such that can make it easy to compromise.</p>
+<p>Only allow changes from a trusted network. Disallow any changes form the public side of the network device, and change to a wireless AP or router from other wireless devices. It makes sure that the one doing the changes is inside the network.</p>
+<p>Require encryption for wireless networks. Enable WPA2, and if possible WPA3 so that the traffic crossing the network is encrypted. </p>
+<p>Audit Access. To help look for suspicious activity and to do forensic analysis for when a device gets breached. Collect these logs and store them off the device. Syslog is a common way to gather logs and sent to a syslog server for storage. </p>
+<p>Backup. Keep backup copies of any device configuration files in case they need to be restored due to misconfiguration, attack, or device replacement. Devices should be backed up and stored remotely. Use the idea of 3-2-1 for backups.</p>
+<h1 id="networksec">NetworkSec<a class="headerlink" href="#networksec" title="Permanent link">&para;</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

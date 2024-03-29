@@ -1,0 +1,2032 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Securing%20Information/">
+      
+      
+        <link rel="next" href="../notes/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>Securing Networks - Crelementals notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-9" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Crelementals notes" class="md-header__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Crelementals notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Securing Networks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Crelementals notes" class="md-nav__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Crelementals notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crelemental's Notes!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Critical Thinking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Critical Thinking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Critical%20Thinking/Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentals of Information Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals of Information Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Assessing%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assessing Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Auditing%20and%20Accountability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditing and Accountability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Authorization%20and%20Access%20Control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authorization and Access Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Human%20Element%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITSec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Identification%20and%20Authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identification and Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Laws%20and%20Regulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laws and Regulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Mobile%2C%20Embedded%2C%20and%20IOT%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mobile, Embedded, and IOT Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Network%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operating%20System%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operating System Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operations%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operations Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Physical%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Physical Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/What%20is%20information%20security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is information security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ISC2 SSCP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ISC2 SSCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Access%20Controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Incident%20Response%20and%20Recovery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incident Response and Recovery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Network%20and%20Communications%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network and Communications Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Risk%20Identification%2C%20Monitoring%2C%20and%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification, Monitoring, and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Sec%20Ops%20and%20Administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sec Ops and Administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Systems%20and%20Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systems and Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Applications   A+ Core 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            IT Applications   A+ Core 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Operating%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Software%20Troubleshooting%20and%20Operational%20Procedures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing Security Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Study%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Study Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Foundations   A+ Core 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IT Foundations   A+ Core 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Mobile%20Devices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/PCS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Printers%20etc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/note%20taking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note taking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network and Security Foundations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Network and Security Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Network%20Security%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firewalls, IDS, IPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Networking%20Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP/IP and OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Networking%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Sec Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Network+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Applied%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Connections%20and%20Addressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OSI Model #OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Network%20Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Topologies and Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Security+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Incidents%20and%20Investigations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incidents and Investigations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks%20and%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks and Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Secure%20and%20Resilient%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure and Resilient Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Securing%20Information/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securing Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Securing Networks
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Securing Networks
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 11
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 13
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 14
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 15
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 16
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 9
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 11
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 13
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 14
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 15
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 16
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Securing Networks</h1>
+
+<h3 id="lesson-9">Lesson 9<a class="headerlink" href="#lesson-9" title="Permanent link">&para;</a></h3>
+<p>A screened subnet uses two firewalls placed on either side of the DMZ. The edge firewall restricts traffic on the external/public interface and allows permitted traffic to the hosts in the DMZ. The edge firewall can be referred to as the screening firewall or router. The internal firewall filters communications between hosts in the DMZ and hosts on the LAN. This firewall is often described as the choke firewall. A choke point is a purposefully narrow gateway that facilitates better access control and easier monitoring.
+![[Pasted image 20240216095643.png]]</p>
+<p>A DMZ can also be established using one router/firewall appliance with three network interfaces, referred to as triple-homed. One interface is the public one, another is the DMZ, and the third connects to the LAN. Routing and filtering rules determine what forwarding is allowed between these interfaces. This can achieve the same sort of configuration as a screened subnet.
+![[Pasted image 20240216095709.png]]</p>
+<p>Smaller networks may not have the budget or technical expertise to implement a DMZ. In this case, Internet access can still be implemented using a dual-homed proxy/gateway server acting as a screened host.
+![[Pasted image 20240216095834.png]]</p>
+<p>MAC cloning, or MAC address spoofing, changes the hardware address configured on an adapter interface or asserts the use of an arbitrary MAC address. While a unique MAC address is assigned to each network interface by the vendor at the factory, it is simple to override it in software via OS commands, alterations to the network driver configuration, or using packet crafting software. This can lead to a variety of issues when investigating security incidents or when depending on MAC addresses as part of a security control, as the presented address of the device may not be reliable.</p>
+<p>An ARP poisoning attack uses a packet crafter, such as Ettercap, to broadcast unsolicited ARP reply packets. Because ARP has no security mechanism, the receiving devices trust this communication and update their MAC:IP address cache table with the spoofed address. The usual target will be the subnet's default gateway (the router that accesses other networks). If the ARP poisoning attack is successful, all traffic destined for remote networks will be sent to the attacker. The attacker can perform a man-in-the-middle attack, either by monitoring the communications and then forwarding them to the router to avoid detection, or modifying the packets before forwarding them. The attacker could also perform a denial of service attack by not forwarding the packets.</p>
+<p>Where ARP poisoning is directed at hosts, MAC flooding is used to attack a switch. The intention of the attacker is to exhaust the memory used to store the switch's MAC address table. The switch uses the MAC address table to determine which port to use to forward unicast traffic to its correct destination. Overwhelming the table can cause the switch to stop trying to apply MAC-based forwarding and flood unicast traffic out of all ports, working as a hub. This makes sniffing network traffic easier for the threat actor.</p>
+<p>Configuring MAC filtering on a switch means defining which MAC addresses are allowed to connect to a particular port. This can be done by creating a list of valid MAC addresses or by specifying a limit to the number of permitted addresses. For example, if port security is enabled with a maximum of two MAC addresses, the switch will record the first two MACs to connect to that port, but then drop any traffic from machines with different MAC addresses that try to connect (<a href="https://www.cisco.com/c/en/us/td/docs/ios/lanswitch/command/reference/lsw_book/lsw_m1.html">cisco.com/c/en/us/td/docs/ios/lanswitch/command/reference/lsw_book/lsw_m1.html</a>). This provides a guard against MAC flooding attacks.</p>
+<p>Another option is to configure Dynamic Host Configuration Protocol (DHCP) snooping. DHCP is the protocol that allows a server to assign IP address information to a client when it connects to the network. DHCP snooping inspects this traffic arriving on access ports to ensure that a host is not trying to spoof its MAC address. It can also be used to prevent rogue (or spurious) DHCP servers from operating on the network. With DHCP snooping, only DHCP messages from ports configured as trusted are allowed. Additionally dynamic ARP inspection (DAI), which can be configured alongside DHCP snooping, prevents a host attached to an untrusted port from flooding the segment with gratuitous ARP replies. DAI maintains a trusted database of IP:ARP mappings and ensures that ARP packets are validly constructed and use valid IP addresses</p>
+<p>The IEEE 802.1X standard defines a port-based network access control (PNAC) mechanism. PNAC means that the switch uses an Authentication, Authorization, and Accounting (AAA) server to authenticate the attached device before activating the port. Network access control (NAC) products can extend the scope of authentication to allow administrators to devise policies or profiles describing a minimum security configuration that devices must meet to be granted network access.</p>
+<p><strong>Protected Extensible Authentication Protocol (PEAP)</strong>
+In Protected Extensible Authentication Protocol (PEAP), as with EAP-TLS, an encrypted tunnel is established between the supplicant and authentication server, but PEAP only requires a server-side public key certificate. The supplicant does not require a certificate. With the server authenticated to the supplicant, user authentication can then take place through the secure tunnel with protection against sniffing, password-guessing/dictionary, and on-path attacks. The user authentication method (also referred to as the "inner" method) can use either EAP-MS-CHAPv2 or EAP-GTC. The Generic Token Card (GTC) method transfers a token for authentication against a network directory or using a one-time password mechanism.</p>
+<p><strong>EAP with Tunneled TLS (EAP-TTLS)</strong>
+EAP-Tunneled TLS (EAP-TTLS) is similar to PEAP. It uses a server-side certificate to establish a protected tunnel through which the user's authentication credentials can be transmitted to the authentication server. The main distinction from PEAP is that EAP-TTLS can use any inner authentication protocol (PAP or CHAP, for instance), while PEAP must use EAP-MS-CHAPv2 or EAP-GTC. </p>
+<p><strong>EAP with Flexible Authentication via Secure Tunneling (EAP-FAST)</strong>
+EAP with Flexible Authentication via Secure Tunneling (EAP-FAST) is similar to PEAP, but instead of using a certificate to set up the tunnel, it uses a Protected Access Credential (PAC), which is generated for each user from the authentication server's master key. The problem with EAP-FAST is in distributing (provisioning) the PAC securely to each user requiring access. The PAC can either be distributed via an out-of-band method or via a server with a digital certificate (but in the latter case, EAP-FAST does not offer much advantage over using PEAP). Alternatively, the PAC can be delivered via anonymous Diffie-Hellman key exchange. The problem here is that there is nothing to authenticate the access point to the user. A rogue access point could obtain enough of the user credential to perform an ASLEAP password cracking attack.</p>
+<p>Where a network attack uses low-level techniques, such as SYN or SYN/ACK flooding, an application attack targets vulnerabilities in the headers and payloads of specific application protocols. For example, one type of amplification attack targets DNS services with bogus queries. One of the advantages of this technique is that while the request is small, the response to a DNS query can be made to include a lot of information, so this is a very effective way of overwhelming the bandwidth of the victim network with much more limited resources on the attacker's botnet.</p>
+<p>Another option is to use sinkhole routing so that the traffic flooding a particular IP address is routed to a different network where it can be analyzed. Potentially some legitimate traffic could be allowed through, but the real advantage is to identify the source of the attack and devise rules to filter it. The target can then use low TTL DNS records to change the IP address 
+advertised for the service and try to allow legitimate traffic past the flood.</p>
+<p>There are two main types of load balancers:
+- Layer 4 load balancer—basic load balancers make forwarding decisions on IP address and TCP/UDP port values, working at the transport layer of the OSI model.
+- Layer 7 load balancer (content switch)—as web applications have become more complex, modern load balancers need to be able to make forwarding decisions based on application-level data, such as a request for a particular URL or data types like video or audio streaming. This requires more complex logic, but the processing power of modern appliances is sufficient to deal with this.</p>
+<h3 id="lesson-10">Lesson 10<a class="headerlink" href="#lesson-10" title="Permanent link">&para;</a></h3>
+<p>A packet filtering firewall is configured by specifying a group of rules, called an access control list (ACL). Each rule defines a specific type of data packet and the action to take when a packet matches the rule. A packet filtering firewall can inspect the headers of IP packets. This means that rules can be based on the information found in those headers:
+- IP filtering—accepting or denying traffic on the basis of its source and/or destination IP address. Some firewalls might also be able to filter by MAC addresses.
+- Protocol ID/type (TCP, UDP, ICMP, routing protocols, and so on).
+- Port filtering/security—accepting or denying a packet on the basis of source and destination port numbers (TCP or UDP application type).</p>
+<p>A basic packet filtering firewall is stateless. This means that it does not preserve information about network sessions. Each packet is analyzed independently, with no record of previously processed packets.</p>
+<p>A stateful inspection firewall addresses problems by tracking information about the session established between two hosts, or blocking malicious attempts to start a bogus session. The vast majority of firewalls now incorporate some level of stateful inspection capability. Session data is stored in a state table. When a packet arrives, the firewall checks it to confirm whether it belongs to an existing connection. If it does not, it applies the ordinary packet filtering rules to determine whether to allow it. Once the connection has been allowed, the firewall usually allows traffic to pass unmonitored, in order to conserve processing effort.</p>
+<p>An application-aware firewall can inspect the contents of packets at the application layer. One key feature is to verify the application protocol matches the port; to verify that malware isn't sending raw TCP data over port 80 just because port 80 is open, for instance. As another example, a web application firewall could analyze the HTTP headers and the HTML code present in HTTP packets to try to identify code that matches a pattern in its threat database. Application-aware firewalls have many different names, including application layer gateway, stateful multilayer inspection, or deep packet inspection. Application aware devices have to be configured with separate filters for each type of traffic (HTTP and HTTPS, SMTP/POP/IMAP, FTP, and so on). Application aware firewalls are very powerful, but they are not invulnerable. Their complexity means that it is possible to craft DoS attacks against exploitable vulnerabilities in the firewall firmware. Also, the firewall cannot examine encrypted data packets, unless configured with an SSL/TLS inspector.</p>
+<p><code>iptables</code> is a command line utility provided by many Linux distributions that allows administrators to edit the rules enforced by the Linux kernel firewall (<a href="https://linux.die.net/man/8/iptables">linux.die.net/man/8/iptables</a>). iptables works with chains, which apply to the different types of traffic, such as the INPUT chain for traffic destined for the local host. Each chain has a default policy set to DROP or ACCEPT traffic that does not match a rule. Each rule, processed in order, determines whether traffic matching the criteria is allowed or dropped.</p>
+<p>An appliance firewall is a stand-alone hardware firewall deployed to monitor traffic passing into and out of a network zone. A firewall appliance can be deployed in two ways:
+- Routed (layer 3)—the firewall performs forwarding between subnets. Each interface on the firewall connects to a different  subnet and represents a different security zone.
+- Bridged (layer 2)—the firewall inspects traffic passing between two nodes, such as a router and a switch. This is also referred to as transparent mode. The firewall does not have an IP interface (except for configuration management). It bridges the Ethernet interfaces between the two nodes. Despite performing forwarding at layer 2, the firewall can still inspect and filter traffic on the basis of the full range of packet headers. The typical use case for a transparent firewall is to deploy it without having to reconfigure subnets and reassign IP addresses on other devices.</p>
+<p>A forward proxy provides for protocol-specific outbound traffic. For example, you might deploy a web proxy that enables client computers on the LAN to connect to websites and secure websites on the Internet. This is a forward proxy that services TCP ports 80 and 443 for outbound traffic.</p>
+<p>Proxy servers can generally be classed as non-transparent or transparent.
+- A non-transparent proxy means that the client must be configured with the proxy server address and port number to use it. The port on which the proxy server accepts client connections is often configured as port 8080.
+- A transparent (or forced or intercepting) proxy intercepts client traffic without the client having to be reconfigured. A transparent proxy must be implemented on a switch or router or other inline network appliance.</p>
+<p>A reverse proxy server provides for protocol-specific inbound traffic. For security purposes, you might not want external hosts to be able to connect directly to application servers, such as web, email, and VoIP servers. Instead, you can deploy a reverse proxy on the network edge and configure it to listen for client requests from a public network (the Internet). The proxy applies filtering rules and if accepted, it creates the appropriate request for an application server within a DMZ. In addition, some reverse proxy servers can handle application-specific load balancing, traffic encryption, and caching, reducing the overhead on the application servers.</p>
+<p>An intrusion detection system (IDS) is a means of using software tools to provide real-time analysis of either network traffic or system and application logs. A network-based IDS (NIDS) captures traffic via a packet sniffer, referred to as a sensor. It analyzes the packets to identify malicious traffic and displays alerts to a console or dashboard.</p>
+<p>A NIDS, such as Snort (<a href="https://www.snort.org/">snort.org</a>), Suricata (<a href="https://suricata.io/">https://suricata.io/</a>), or Zeek/Bro (<a href="https://zeek.org/">zeek.org</a>) performs passive detection. When traffic is matched to a detection signature, it raises an alert or generates a log entry, but does not block the source host. This type of passive sensor does not slow down traffic and is undetectable by the attacker. It does not have an IP address on the monitored network segment.</p>
+<p>Compared to the passive function of an IDS, an intrusion prevention system (IPS) can provide an active response to any network threats that it matches. One typical preventive measure is to end the TCP session, sending a TCP reset packet to the attacking host. Another option is for the IPS to apply a temporary filter on the firewall to block the attacker's IP address (shunning). Other advanced measures include throttling bandwidth to attacking hosts, applying complex firewall filters, and even modifying suspect packets to render them harmless. Finally, the appliance may be able to run a script or third-party 
+program to perform some other action not supported by the IPS software itself.</p>
+<p>While intrusion detection was originally produced as standalone software or appliances, its functionality very quickly became incorporated into a new generation of firewalls. The original next-generation firewall (NGFW) was released as far back as 2010 by Palo Alto. This product combined application-aware filtering with user account-based filtering and the ability to act as an intrusion prevention system (IPS). This approach was quickly adopted by competitor products. Subsequent firewall generations have added capabilities such as cloud inspection and combined features of different security technologies.</p>
+<p>Unified threat management (UTM) refers to a security product that centralizes many types of security controls—firewall, anti-malware, network intrusion prevention, spam filtering, content filtering, data loss prevention, VPN, cloud access gateway—into a single appliance. This means that you can monitor and manage the controls from a single console. Nevertheless, UTM has some downsides. When defense is unified under a single system, this creates the potential for a single point of failure that could affect an entire network.</p>
+<p>Software designed to assist with managing security data inputs and provide reporting and alerting is often described as security information and event management (SIEM). The core function of a SIEM tool is to aggregate traffic data and logs. In addition to logs from Windows and Linux-based hosts, this could include switches, routers, firewalls, IDS sensors, vulnerability scanners, malware scanners, data loss prevention (DLP) systems, and databases.</p>
+<p>There are three main types of log collection:
+- Agent-based—with this approach, you must install an agent service on each host. As events occur on the host, logging data is filtered, aggregated, and normalized at the host, then sent to the SIEM server for analysis and storage.
+- Listener/collector—rather than installing an agent, hosts can be configured to push updates to the SIEM server using a protocol such as syslog or SNMP. A process runs on the management server to parse and normalize each log/monitoring source.<br />
+    Syslog (<a href="https://tools.ietf.org/html/rfc3164">tools.ietf.org/html/rfc3164</a>) allows for centralized collection of events from multiple sources. It also provides an open format for event logging messages, and as such has become a de facto standard for logging of events from distributed systems. For example, syslog messages can be generated by Cisco routers and switches, as well as servers and workstations.
+- Sensor—as well as log data, the SIEM might collect packet captures and traffic flow data from sniffers.</p>
+<p>Where collection and aggregation produce inputs, a SIEM is also used for reporting. A critical function of SIEM—and the principal factor distinguishing it from basic log management—is that of correlation. This means that the SIEM software can link individual events or data points (observables) into a meaningful indicator of risk, or Indicator of Compromise (IOC). Correlation can then be used to drive an alerting system. These reports would be viewed from the SIEM dashboard.
+Basic correlation can be performed using simple If…Then type rules. However, many SIEM solutions use artificial intelligence (AI) and machine learning as the basis for automated analysis.</p>
+<p>One of the biggest challenges for behavior analytics driven by machine learning is to identify intent. It is extremely difficult for a machine to establish the context and interpretation of statements in natural language, though much progress is being made. The general efforts in this area are referred to as sentiment analysis, or emotion AI. The typical use case for sentiment analysis is to monitor social media for brand "incidents," such as a disgruntled customer announcing on Twitter what poor customer service they have just received. In terms of security, this can be used to gather threat intelligence and try to identify external or insider threats before they can develop as attacks.</p>
+<p>Security orchestration, automation, and response (SOAR) is designed as a solution to the problem of the volume of alerts overwhelming analysts' ability to respond. A SOAR may be implemented as a standalone technology or integrated with a SIEM—often referred to as a next-gen SIEM. The basis of SOAR is to scan the organization's store of security and threat intelligence, analyze it using machine/deep learning techniques, and then use that data to automate and provide data enrichment for the workflows that drive incident response and threat hunting.</p>
+<p>The following list illustrates some commonly used elements of regex syntax:
+- [ … ] matches a single instance of a character within the brackets. This can include literals, ranges such as [a-z], and token matches, such as [\s] (white space) or [\d] (one digit).
+- + matches one or more occurrences. A quantifier is placed after the term to match; for example, \s+ matches one or more white space characters.
+- * matches zero or more times.
+- ? matches once or not at all.
+- {} matches a number of times. For example, {2} matches two times, {2,} matches two or more times, and {2,5} matches two to five times.</p>
+<h3 id="lesson-11">Lesson 11<a class="headerlink" href="#lesson-11" title="Permanent link">&para;</a></h3>
+<p>DNS poisoning is an attack that compromises the process by which clients query name servers to locate the IP address for a Fully Qualified Domain Name (FQDN). There are several ways that a DNS poisoning attack can be perpetrated.</p>
+<p>DNS footprinting means obtaining information about a private network by using its DNS server to perform a zone transfer (all the records in a domain) to a rogue DNS or simply by querying the DNS service, using a tool such as nslookup or dig. To prevent this, you can apply an Access Control List to prevent zone transfers to unauthorized hosts or domains, to prevent an external server from obtaining information about the private network architecture.</p>
+<p>DNS Security Extensions (DNSSEC) help to mitigate against spoofing and poisoning attacks by providing a validation process for DNS responses. With DNSSEC enabled, the authoritative server for the zone creates a "package" of resource records (called an RRset) signed with a private key (the Zone Signing Key). When another server requests a secure record exchange, the authoritative server returns the package along with its public key, which can be used to verify the signature.</p>
+<p>Most directory services are based on the Lightweight Directory Access Protocol (LDAP), running over port 389. The basic protocol provides no security and all transmissions are in plaintext, making it vulnerable to sniffing and man-in-the-middle attacks. Authentication (referred to as binding to the server) can be implemented in the following ways:
+- No authentication—anonymous access is granted to the directory.
+- Simple bind—the client must supply its distinguished name (DN) and password, but these are passed as plaintext.
+- Simple Authentication and Security Layer (SASL)—the client and server negotiate the use of a supported authentication mechanism, such as Kerberos. The STARTTLS command can be used to require encryption (sealing) and message integrity (signing). This is the preferred mechanism for Microsoft's Active Directory (AD) implementation of LDAP.
+- LDAP Secure (LDAPS)—the server is installed with a digital certificate, which it uses to set up a secure tunnel for the user credential exchange. LDAPS uses port 636.</p>
+<p>IPSec's encryption and hashing functions depend on a shared secret. The secret must be communicated to both hosts and the hosts must confirm one another's identity (mutual authentication). Otherwise, the connection is vulnerable to man-in-the-middle and spoofing attacks. The Internet Key Exchange (IKE) protocol handles authentication and key exchange, referred to as Security Associations (SA).</p>
+<p>Remote management methods can be described as either in-band or out-of-band (OOB). An in-band management link is one that shares traffic with other communications on the "production" network. A serial console or modem port on a router is a physically out-of-band management method. When using a browser-based management interface or a virtual terminal over Ethernet and IP, the link can be made out-of-band by connecting the port used for management access to physically separate network infrastructure. This can be costly to implement, but out-of-band management is more secure and means that access to the device is preserved when there are problems affecting the production network. With an in-band connection, better security can be implemented by using a VLAN to isolate management traffic. This makes it harder for potential eavesdroppers to view or modify traffic passing over the management interface. This sort of virtual OOB does still mean that access could be compromised by a system-wide network failure, however.</p>
+<h3 id="lesson-12">Lesson 12<a class="headerlink" href="#lesson-12" title="Permanent link">&para;</a></h3>
+<p>A hardware Root of Trust (RoT) or trust anchor is a secure subsystem that is able to provide attestation. Attestation means that a statement made by the system can be trusted by the receiver. For example, when a computer joins a network, it might submit a report to the network access control (NAC) server declaring, "My operating system files have not been replaced with malicious versions." The hardware root of trust is used to scan the boot metrics and OS files to verify their signatures, then it signs the report. The NAC server can trust the signature and therefore the report contents if it can trust that the signing entity's private key is secure.</p>
+<p>The RoT is usually established by a type of cryptoprocessor called a trusted platform module (TPM).</p>
+<p>One of the drawbacks of FDE is that, because the OS performs the cryptographic operations, performance is reduced. This issue is mitigated by self-encrypting drives (SED), where the cryptographic operations are performed by the drive controller. The SED uses a symmetric data/media encryption key (DEK/MEK) for bulk encryption and stores the DEK securely by encrypting it with an asymmetric key pair called either the authentication key (AK) or key encryption key (KEK). Use of the AK is authenticated by the user password. This means that the user password can be changed without having to decrypt and re-encrypt the drive. Early types of SEDs used proprietary mechanisms, but many vendors now develop to the Opal Storage Specification (<a href="https://wmx-api-production.s3.amazonaws.com/courses/5721/supplementary/TCGandNVMe_Joint_White_Paper-TCG_Storage_Opal_and_NVMe_FINAL.pdf">nvmexpress.org/wp-content/uploads/TCGandNVMe_Joint_White_Paper-TCG_Storage_Opal_and_NVMe_FINAL.pdf</a>), developed by the Trusted Computing Group (TCG).</p>
+<ul>
+<li>Memorandum of understanding (MOU)—A preliminary or exploratory agreement to express an intent to work together. MOUs are usually intended to be relatively informal and not to act as binding contracts. MOUs almost always have clauses stating that the parties shall respect confidentiality, however.</li>
+<li>Business partnership agreement (BPA)—While there are many ways of establishing business partnerships, the most common model in IT is the partner agreements that large IT companies (such as Microsoft and Cisco) set up with resellers and solution providers.</li>
+<li>Nondisclosure agreement (NDA)—Legal basis for protecting information assets. NDAs are used between companies and employees, between companies and contractors, and between two companies. If the employee or contractor breaks this agreement and does share such information, they may face legal consequences. NDAs are useful because they deter employees and contractors from violating the trust that an employer places in them.</li>
+<li>Service level agreement (SLA)—A contractual agreement setting out the detailed terms under which a service is provided.</li>
+<li>Measurement systems analysis (MSA)—quality management processes, such as Six Sigma, make use of quantified analysis methods to determine the effectiveness of a system. This can be applied to cybersecurity procedures, such as vulnerability and threat detection and response. A measurement systems analysis (MSA) is a means of evaluating the data collection and statistical methods used by a quality management process to ensure they are robust. This might be an onboarding requirement when partnering with enterprise companies or government agencies.</li>
+</ul>
+<p>Endpoint protection usually depends on an agent running on the local host. If multiple security products install multiple agents (say one for A-V, one for HIDS, another for host-based firewall, and so on), they can impact system performance and cause conflicts, creating numerous technical support incidents and security incident false positives. An endpoint protection platform (EPP) is a single agent performing multiple security tasks, including malware/intrusion detection and prevention, but also other security features, such as a host firewall, web content filtering/secure search and browsing, and file/message encryption.</p>
+<p>Many EPPs include a data loss prevention (DLP) agent. This is configured with policies to identify privileged files and strings that should be kept private or confidential, such as credit card numbers. The agent enforces the policy to prevent data from being copied or attached to a message without authorization.</p>
+<p>An endpoint detection and response (EDR) product's aim is not to prevent initial execution, but to provide real-time and historical visibility into the compromise, contain the malware within a single host, and facilitate remediation of the host to its original state. The term EDR was coined by Gartner security researcher Anton Chuvakin, and Gartner produces annual "Magic Quadrant" reports for both EPP (<a href="https://www.gartner.com/en/documents/3848470">gartner.com/en/documents/3848470</a>) and EDR functionality within security suites (<a href="https://www.gartner.com/en/documents/3894086/market-guide-for-endpoint-detection-and-response-solutio">gartner.com/en/documents/3894086/market-guide-for-endpoint-detection-and-response-solutio</a>).
+Where earlier endpoint protection suites report to an on-premises management server, next-generation endpoint agents are more likely to be managed from a cloud portal and use artificial intelligence (AI) and machine learning to perform user and entity behavior analysis. These analysis resources would be part of the security service provider's offering</p>
+<p>A field programmable gate array (FPGA) is a type of controller that solves this problem. The structure of the controller is not fully set at the time of manufacture. The end customer can configure the programming logic of the device to run a specific application.</p>
+<p>Many embedded systems operate devices that perform acutely time-sensitive tasks, such as drip meters or flow valves. The kernels or operating systems that run these devices must be much more stable and reliable than the OS that runs a desktop computer or server. Embedded systems typically cannot tolerate reboots or crashes and must have response times that are predictable to within microsecond tolerances. Consequently, these systems often use differently engineered platforms called real-time operating systems (RTOS). An RTOS should be designed to have as small an attack surface as possible. An RTOS is still susceptible to CVEs and exploits, however.</p>
+<p>Industrial control systems (ICSs) provide mechanisms for workflow and process automation. These systems control machinery used in critical infrastructure, like power suppliers, water suppliers, health services, telecommunications, and national security services. An ICS that manages process automation within a single site is usually referred to as a distributed control system (DCS).</p>
+<p>A supervisory control and data acquisition (SCADA) system takes the place of a control server in large-scale, multiple-site ICSs. SCADA typically run as software on ordinary computers, gathering data from and managing plant devices and equipment with embedded PLCs, referred to as field devices. SCADA typically use WAN communications, such as cellular or satellite, to link the SCADA server to field devices.</p>
+<p>A building automation system (BAS) for offices and data centers ("smart buildings") can include physical access control systems, but also heating, ventilation, and air conditioning (HVAC), fire control, power and lighting, and elevators and escalators. These subsystems are implemented by PLCs and various types of sensors that measure temperature, air pressure, humidity, room occupancy, and so on. Some typical vulnerabilities that affect these systems include:
+- Process and memory vulnerabilities, such as buffer overflow, in the PLCs. These may arise from processing maliciously crafted packets in the automation management protocol. Building automation uses dedicated network protocols, such as BACnet or Dynet.
+- Use of plaintext credentials or cryptographic keys within application code.
+- Code injection via the graphical web application interfaces used to configure and monitor systems. This can be used to perform JavaScript-based attacks, such as clickjacking and cross-site scripting (XSS).</p>
+<h3 id="lesson-13">Lesson 13<a class="headerlink" href="#lesson-13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mobile device management (MDM)—sets device policies for authentication, feature use (camera and microphone), and connectivity. MDM can also allow device resets and remote wipes.</li>
+<li>Mobile application management (MAM)—sets policies for apps that can process corporate data, and prevents data transfer to personal apps. This type of solution configures an enterprise-managed container or workspace.</li>
+</ul>
+<p>It is also important to consider newer authentication models, such as context-aware authentication. For example, smartphones now allow users to disable screen locks when the device detects that it is in a trusted location, such as the home. Conversely, an enterprise may seek more stringent access controls to prevent misuse of a device. For example, even if the device has been unlocked, accessing a corporate workspace might require the user to authenticate again. It might also check whether the network connection can be trusted (that it is not an open Wi-Fi hotspot, for instance).</p>
+<p>Unless some sort of authentication is configured, a discoverable device is vulnerable to bluejacking, a sort of spam where someone sends you an unsolicited text (or picture/video) message or vCard (contact details). This can also be a vector for malware, as demonstrated by the Obad Android Trojan malware (<a href="https://securelist.com/the-most-sophisticated-android-trojan/35929/">securelist.com/the-most-sophisticated-android-trojan/35929</a>).</p>
+<p>Bluesnarfing refers to using an exploit in Bluetooth to steal information from someone else's phone. The exploit (now patched) allows attackers to circumvent the authentication mechanism. Even without an exploit, a short (4 digit) PIN code is vulnerable to brute force password guessing.</p>
+<h3 id="lesson-14">Lesson 14<a class="headerlink" href="#lesson-14" title="Permanent link">&para;</a></h3>
+<p>The purpose of most application attacks is to allow the threat actor to run his or her own code on the system. This is referred to as arbitrary code execution. Where the code is transmitted from one machine to another, it can be referred to as remote code execution. The code would typically be designed to install some sort of backdoor or to disable the system in some way (denial of service).</p>
+<p>There are two main types of privilege escalation:
+- Vertical privilege escalation (or elevation) is where a user or application can access functionality or data that should not be available to them. For instance, a process might run with local administrator privileges, but a vulnerability allows the arbitrary code to run with higher system privileges.
+- Horizontal privilege escalation is where a user accesses functionality or data that is intended for another user. For instance, via a process running with local administrator privileges on a client workstation, the arbitrary code is able to execute as a domain account on an application server.</p>
+<p>A buffer is an area of memory that the application reserves to store expected data. To exploit a buffer overflow vulnerability, the attacker passes data that deliberately overfills the buffer. One of the most common vulnerabilities is a stack overflow. The stack is an area of memory used by a program subroutine. It includes a return address, which is the location of the program that has called the subroutine. An attacker could use a buffer overflow to change the return address, allowing the attacker to run arbitrary code on the system.</p>
+<p>Integers (whole numbers) are widely used as a data type, where they are commonly defined with fixed lower and upper bounds. An integer overflow attack causes the target software to calculate a value that exceeds these bounds. This may cause a positive number to become negative (changing a bank debit to a credit, for instance). It could also be used where the software is calculating a buffer size.</p>
+<p>In C/C++ programming, a pointer is a variable that stores a memory location, rather than a value. Attempting to read or write that memory address via the pointer is called dereferencing. If the memory location is invalid or null (perhaps by some malicious process altering the execution environment), this creates a null pointer dereference type of exception, and the process will crash, probably. In some circumstances, this might also allow a threat actor to run arbitrary code.
+A race condition is one means of engineering a null pointer dereference exception. Race conditions occur when the outcome from an execution process is directly dependent on the order and timing of certain events, and those events fail to execute in the order and timing intended by the developer. In 2016, the Linux kernel was discovered to have an exploitable race condition vulnerability, known as Dirty COW (<a href="https://www.theregister.com/2016/10/21/linux_privilege_escalation_hole">theregister.com/2016/10/21/linux_privilege_escalation_hole</a>).</p>
+<p>DLL injection is a vulnerability in the way the operating system allows one process to attach to another. This functionality can be abused by malware to force a legitimate process to load a malicious link library. The link library will contain whatever functions the malware author wants to be able to run. Malware uses this technique to move from one host process to another to avoid detection. A process that has been compromised by DLL injection might open unexpected network connections, or interact with files and the registry suspiciously.</p>
+<p>One common credential exploit technique for lateral movement is called pass the hash (PtH). This is the process of harvesting an account's cached credentials when the user is logged into a single sign-on (SSO) system so the attacker can use the credentials on other systems. If the threat actor can obtain the hash of a user password, it is possible to present the hash (without cracking it) to authenticate to network protocols such as the Windows File Sharing protocol Server Message Block (SMB), and other protocols that accept Windows NT LAN Manager (NTLM) hashes as authentication credentials. For example, most Windows domain networks are configured to allow NTLM as a legacy authentication method for services. The attacker's access isn't just limited to a single host, as they can pass the hash onto any computer in the network that is tied to the domain. This drastically cuts down on the effort the threat actor must spend in moving from host to host.</p>
+<p>Session management is often vulnerable to different kinds of replay attacks. To establish a session, the server normally gives the client some type of token. A replay attack works by sniffing or guessing the token value and then submitting it to re-establish the session illegitimately.</p>
+<p>In the context of a web application, session hijacking most often means replaying a cookie in some way. Attackers can sniff network traffic to obtain session cookies sent over an unsecured network, like a public Wi-Fi hotspot. To counter cookie hijacking, you can encrypt cookies during the transmission process, delete cookies from the client's browser cache when the client terminates the session, and design your web app to deliver a new cookie with each new session between the app and the client's browser.</p>
+<p>A web application is likely to use Structured Query Language (SQL) to read and write information from a database. The main database operations are performed by SQL statements for selecting data (SELECT), inserting data (INSERT), deleting data (DELETE), and updating data (UPDATE). In a SQL injection attack, the threat actor modifies one or more of these four basic functions by adding code to some input accepted by the app, causing it to execute the attacker's own set of SQL queries or parameters. If successful, this could allow the attacker to extract or insert information into the database or execute arbitrary code on the remote system using the same privileges as the database application (<a href="https://owasp.org/www-community/attacks/SQL_Injection">owasp.org/www-community/attacks/SQL_Injection</a>).</p>
+<p>Extensible Markup Language (XML) is used by apps for authentication and authorizations, and for other types of data exchange and uploading. Data submitted via XML with no encryption or input validation is vulnerable to spoofing, request forgery, and injection of arbitrary data or code. For example, an XML External Entity (XXE) attack embeds a request for a local resource (<a href="https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing">owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing</a>).</p>
+<p>Directory traversal is another type of injection attack performed against a web server. The threat actor submits a request for a file outside the web server's root directory by submitting a path to navigate to the parent directory (../). This attack can succeed if the input is not filtered properly and access permissions on the file are the same as those on the web server directory.</p>
+<p>A primary vector for attacking applications is to exploit faulty input validation. Input could include user data entered into a form or URL passed by another application as a URL or HTTP header. Malicious input could be crafted to perform an overflow attack or some type of script or SQL injection attack. To mitigate this risk, all input methods should be documented with a view to reducing the potential attack surface exposed by the application. There must be routines to check user input, and anything that does not conform to what is required must be rejected.</p>
+<p>observing malware in a sandbox, it is helpful to consider the main types of malicious activity:
+- Shellcode—this is a minimal program designed to exploit a buffer overflow or similar vulnerability to gain privileges, or to drop a backdoor on the host if run as a Trojan (<a href="https://attack.mitre.org/tactics/TA0002/">attack.mitre.org/tactics/TA0002</a>). Having gained a foothold, this type of attack will be followed by some type of network connection to download additional tools.
+- Credential dumping—the malware might try to access the credentials file (SAM on a local Windows workstation) or sniff credentials held in memory by the lsass.exe system process (<a href="https://attack.mitre.org/tactics/TA0006/">attack.mitre.org/tactics/TA0006</a>).
+- Lateral movement/insider attack—the general procedure is to use the foothold to execute a process remotely, using a tool such as psexec (<a href="https://docs.microsoft.com/en-us/sysinternals/downloads/psexec">docs.microsoft.com/en-us/sysinternals/downloads/psexec</a>) or PowerShell (<a href="https://attack.mitre.org/tactics/TA0008/">attack.mitre.org/tactics/TA0008</a>). The attacker might be seeking data assets or may try to widen access by changing the system security configuration, such as opening a firewall port or creating an account. If the attacker has compromised an account, these commands can blend in with ordinary network operations, though they could be anomalous behavior for that account.
+- Persistence—this is a mechanism that allows the threat actor's backdoor to restart if the host reboots or the user logs off (<a href="https://attack.mitre.org/tactics/TA0003/">attack.mitre.org/tactics/TA0003</a>). Typical methods are to use AutoRun keys in the registry, adding a scheduled task, or using Windows Management Instrumentation (WMI) event subscriptions.</p>
+<p>Continuous integration (CI) is the principle that developers should commit and test updates often—every day or sometimes even more frequently. This is designed to reduce the chances of two developers spending time on code changes that are later found to conflict with one another. CI aims to detect and resolve these conflicts early, as it is easier to diagnose one or two conflicts or build errors than it is to diagnose the causes of tens of them. For effective CI, it is important to use an automated test suite to validate each build quickly.</p>
+<h3 id="lesson-15">Lesson 15<a class="headerlink" href="#lesson-15" title="Permanent link">&para;</a></h3>
+<p>![[Pasted image 20240219095251.png]]
+SEC as a SERVICE
+- Consultants—the experience and perspective of a third-party professional can be hugely useful in improving security awareness and capabilities in any type of organization (small to large). Consultants could be used for "big picture" framework analysis and alignment or for more specific or product-focused projects (pen testing, SIEM rollout, and so on). It is also fairly simple to control costs when using consultants if they are used to develop capabilities rather than implement them. Where consultants come to "own" the security function, it can be difficult to change or sever the relationship.
+- Managed Security Services Provider (MSSP)—a means of fully outsourcing responsibility for information assurance to a third party. This type of solution is expensive but can be a good fit for a SMB that has experienced rapid growth and has no in-house security capability. Of course, this type of outsourcing places a huge amount of trust in the MSSP. Maintaining effective oversight of the MSSP requires a good degree of internal security awareness and expertise. There could also be significant challenges in industries exposed to high degrees of regulation in terms of information processing.
+- Security as a Service (SECaaS)—can mean lots of different things, but is typically distinguished from an MSSP as being a means of implementing a particular security control, such as virus scanning or SIEM-like functionality, in the cloud. Typically, there would be a connector to the cloud service installed locally. For example, an antivirus agent would scan files locally but be managed and updated from the cloud provider; similarly a log collector would submit events to the cloud service for aggregation and correlation. Examples include Cloudflare (<a href="https://www.cloudflare.com/saas">cloudflare.com/saas</a>), Mandiant/FireEye (<a href="https://www.fireeye.com/mandiant/managed-detection-and-response.html">fireeye.com/mandiant/managed-detection-and-response.html</a>), and SonicWall (<a href="https://www.sonicwall.com/solutions/service-provider/security-as-a-service/">sonicwall.com/solutions/service-provider/security-as-a-service</a>).</p>
+<p>VM escaping refers to malware running on a guest OS jumping to another guest or to the host. To do this, the malware must identify that it is running in a virtual environment, which is usually simple to do. One means of doing so is through a timing attack. The classic timing attack is to send multiple usernames to an authentication server and measure the server response times. An invalid username will usually be rejected very quickly, but a valid one will take longer (while the authentication server checks the password). This allows the attacker to harvest valid usernames. Malware can use a timing attack within a guest OS to detect whether it is running in a VM (certain operations may take a distinct amount of time compared to a "real" environment).</p>
+<p>Service-oriented architecture (SOA) conceives of atomic services closely mapped to business workflows. Each service takes defined inputs and produces defined outputs. The service may itself be composed of sub-services. The key features of a service function are that it is self-contained, does not rely on the state of other services, and exposes clear input/output (I/O) interfaces. Because each service has a simple interface, interoperability is made much easier than with a complex monolithic application. The implementation of a service does not constrain compatibility choices for client services, which can use a different platform or development language. This independence of the service and the client requesting the service is referred to as loose coupling.</p>
+<p>Microservice-based development shares many similarities with Agile software project management and the processes of continuous delivery and deployment. It also shares roots with the Unix philosophy that each program or tool should do one thing well. The main difference between SOA and microservices is that SOA allows a service to be built from other services. By contrast, each microservice should be capable of being developed, tested, and deployed independently.</p>
+<p>Services integration refers to ways of making these decoupled service or microservice components work together to perform a workflow. Where SOA used the concept of an enterprise service bus, microservices integration and cloud services/virtualization/automation integration generally is very often implemented using orchestration tools. Where automation focuses on making a single, discrete task easily repeatable, orchestration performs a sequence of automated tasks. For example, you might orchestrate adding a new VM to a load-balanced cluster. This end-to-end process might include provisioning the VM, configuring it, adding the new VM to the load-balanced cluster, and reconfiguring the load-balancing weight distribution given the new cluster configuration. In doing this, the orchestrated steps would have to run numerous automated scripts or API service calls.</p>
+<p>The serverless paradigm eliminates the need to manage physical or virtual server instances, so there is no management effort for software and patches, administration privileges, or file system security monitoring. There is no requirement to provision multiple servers for redundancy or load balancing. As all of the processing is taking place within the cloud, there is little emphasis on the provision of a corporate network.</p>
+<h3 id="lesson-16">Lesson 16<a class="headerlink" href="#lesson-16" title="Permanent link">&para;</a></h3>
+<p>A data governance policy describes the security controls that will be applied to protect data at each stage of its life cycle. There are important institutional governance roles for oversight and management of information assets within the life cycle:
+- Data owner—a senior (executive) role with ultimate responsibility for maintaining the confidentiality, integrity, and availability of the information asset. The owner is responsible for labeling the asset (such as determining who should have access and determining the asset's criticality and sensitivity) and ensuring that it is protected with appropriate controls (access control, backup, retention, and so forth). The owner also typically selects a steward and custodian and directs their actions and sets the budget and resource allocation for sufficient controls.
+- Data steward—this role is primarily responsible for data quality. This involves tasks such as ensuring data is labeled and identified with appropriate metadata and that data is collected and stored in a format and with values that comply with applicable laws and regulations.
+- Data custodian—this role handles managing the system on which the data assets are stored. This includes responsibility for enforcing access control, encryption, and backup/recovery measures.
+- Data Privacy Officer (DPO)—this role is responsible for oversight of any personally identifiable information (PII) assets managed by the company. The privacy officer ensures that the processing, disclosure, and retention of PII complies with legal and regulatory frameworks.
+In the context of legislation and regulations protecting personal privacy, the following two institutional roles are important:
+- Data controller—the entity responsible for determining why and how data is stored, collected, and used and for ensuring that these purposes and means are lawful. The data controller has ultimate responsibility for privacy breaches, and is not permitted to transfer that responsibility.
+- Data processor—an entity engaged by the data controller to assist with technical collection, storage, or analysis tasks. A data processor follows the instructions of a data controller with regard to collection or processing.</p>
+<ul>
+<li>Interconnection security agreement (ISA)—ISAs are defined by NIST's SP800-47 "Managing the Security of Information Exchanges" (<a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-47r1.pdf#">https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-47r1.pdf</a>). Any federal agency interconnecting its IT system to a third party must create an ISA to govern the relationship. An ISA sets out a security risk awareness process and commits the agency and supplier to implementing security controls.</li>
+</ul>
+<p>Unauthorized copying or retrieval of data from a system is referred to as data exfiltration. Data exfiltration attacks are one of the primary means for attackers to retrieve valuable data, such as personally identifiable information (PII) or payment information, often destined for later sale on the black market. Data exfiltration can take place via a wide variety of mechanisms, including:</p>
+<p>Data loss prevention (DLP) products automate the discovery and classification of data types and enforce rules so that data is not viewed or transferred without a proper authorization. Such solutions will usually consist of the following components:
+- Policy server—to configure classification, confidentiality, and privacy rules and policies, log incidents, and compile reports.
+- Endpoint agents—to enforce policy on client computers, even when they are not connected to the network.
+- Network agents—to scan communications at network borders and interface with web and messaging servers to enforce policy.</p>
+<p>Data minimization is the principle that data should only be processed and stored if that is necessary to perform the purpose for which it is collected. In order to prove compliance with the principle of data minimization, each process that uses personal data should be documented. The workflow can supply evidence of why processing and storage of a particular field or data point is required. Data minimization affects the data retention policy. It is necessary to track how long a data point has been stored for since it was collected and whether continued retention supports a legitimate processing function. Another impact is on test environments, where the minimization principle forbids the use of real data records.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

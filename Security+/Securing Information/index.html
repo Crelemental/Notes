@@ -1,0 +1,1897 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Secure%20and%20Resilient%20Operations/">
+      
+      
+        <link rel="next" href="../Securing%20Networks/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>Securing Information - Crelementals notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-5" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Crelementals notes" class="md-header__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Crelementals notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Securing Information
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Crelementals notes" class="md-nav__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Crelementals notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crelemental's Notes!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Critical Thinking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Critical Thinking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Critical%20Thinking/Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentals of Information Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals of Information Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Assessing%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assessing Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Auditing%20and%20Accountability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditing and Accountability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Authorization%20and%20Access%20Control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authorization and Access Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Human%20Element%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITSec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Identification%20and%20Authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identification and Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Laws%20and%20Regulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laws and Regulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Mobile%2C%20Embedded%2C%20and%20IOT%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mobile, Embedded, and IOT Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Network%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operating%20System%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operating System Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operations%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operations Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Physical%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Physical Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/What%20is%20information%20security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is information security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ISC2 SSCP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ISC2 SSCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Access%20Controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Incident%20Response%20and%20Recovery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incident Response and Recovery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Network%20and%20Communications%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network and Communications Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Risk%20Identification%2C%20Monitoring%2C%20and%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification, Monitoring, and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Sec%20Ops%20and%20Administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sec Ops and Administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Systems%20and%20Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systems and Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Applications   A+ Core 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            IT Applications   A+ Core 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Operating%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Software%20Troubleshooting%20and%20Operational%20Procedures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing Security Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Applications%20-%20A%2B%20Core%202/Study%20Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Study Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Foundations   A+ Core 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IT Foundations   A+ Core 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Mobile%20Devices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/PCS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Printers%20etc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/note%20taking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note taking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network and Security Foundations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Network and Security Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Network%20Security%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firewalls, IDS, IPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Networking%20Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP/IP and OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Networking%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Sec Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Network+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Applied%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Connections%20and%20Addressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OSI Model #OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Network%20Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Topologies and Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Security+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Incidents%20and%20Investigations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incidents and Investigations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networks%20and%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks and Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Secure%20and%20Resilient%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure and Resilient Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Securing Information
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Securing Information
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 7
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 8
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Securing%20Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securing Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 5
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 6
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 7
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 8
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Securing Information</h1>
+
+<h3 id="lesson-5">Lesson 5<a class="headerlink" href="#lesson-5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Plaintext (or <em>cleartext</em>)—an unencrypted message. </li>
+<li>Ciphertext—an encrypted message. </li>
+<li>Cipher—the process (or algorithm) used to encrypt and decrypt a message. </li>
+<li>Cryptanalysis—the art of cracking cryptographic systems.</li>
+</ul>
+<p>A hashing algorithm is used to prove integrity. For example, Bob and Alice can compare the values used for a password in the following way:
+1. Bob already has a digest calculated from Alice's plaintext password. Bob cannot recover the plaintext password value from the hash.
+2. When Alice needs to authenticate to Bob, she types her password, converts it to a hash, and sends the digest to Bob.
+3. Bob compares Alice's digest to the hash value he has on file. If they match, he can be sure that Alice typed the same password.</p>
+<p>A symmetric cipher is one in which encryption and decryption are both performed by the same secret key. The secret key is so-called because it must be kept secret. If the key is lost or stolen, the security is breached. Symmetric encryption is used for confidentiality. For example, Alice and Bob can share a confidential file in the following way:
+1. Alice and Bob meet to agree which cipher to use and a secret key value. They both record the value of the secret key, making sure that no one else can discover it.
+2. Alice encrypts a file using the cipher and key.
+3. She sends only the ciphertext to Bob over the network.
+4. Bob receives the ciphertext and is able to decrypt it by applying the same cipher with his copy of the secret key.
+    In a <strong>stream cipher</strong>, each byte or bit of data in the plaintext is encrypted one at a time. This is suitable for encrypting communications where the total length of the message is not known. The plaintext is combined with a separate randomly generated message, calculated from the key and an initialization vector (IV). The IV ensures the key produces a unique ciphertext from the same plaintext. The keystream must be unique, so an IV must not be reused with the same key. The recipient must be able to generate the same keystream as the sender and the streams must be synchronized. Stream ciphers might use markers to allow for synchronization and retransmission. Some types of stream ciphers are made self-synchronizing.
+    In a <strong>block cipher</strong>, the plaintext is divided into equal-size blocks (usually 128-bit). If there is not enough data in the plaintext, it is padded to the correct size using some string defined in the algorithm. For example, a 1200-bit plaintext would be padded with an extra 80 bits to fit into 10 x 128-bit blocks. Each block is then subjected to complex transposition and substitution operations, based on the value of the key used.
+    <strong>AES</strong></p>
+<p>With an asymmetric cipher, operations are performed by two different but related public and private keys in a key pair. 
+Each key is capable of reversing the operation of its pair. For example, if the public key is used to encrypt a message, only the paired private key can decrypt the ciphertext produced. The public key cannot be used to decrypt the ciphertext, even though it was used to encrypt it.
+Consequently, asymmetric encryption is mostly used for authentication and non-repudiation and for key agreement and exchange. Key agreement/exchange refers to settling on a secret symmetric key to use for bulk encryption without anyone else discovering it.
+    Many public key cryptography products are based on the <strong>RSA</strong> algorithm.
+    Elliptic curve cryptography (ECC) is another type of trapdoor function that can be used in public key cryptography ciphers. The principal advantage of ECC over RSA's algorithm is that there are no known "shortcuts" to cracking the cipher or the math that underpins it, regardless of key length.</p>
+<p>Public key cryptography and hashing combined can be used to make a digital signature, to prove integrity and authentication.
+1. Alice (the sender) creates a digest of a message, using a pre-agreed hash algorithm, and encrypts the digest using Alice’s private key. This creates Alice’s digital signature.
+2. Alice attaches the digital signature and sends both the message and public key to Bob (the receiver).
+3. Bob decrypts the digital signature using Alice's public key, resulting in the digest of the message.
+4. Bob then creates a digest of the message, using the same pre-agreed hash algorithm that Alice used. Bob compares both digests.
+The Digital Signature Algorithm (DSA) is a slightly different format for achieving the same sort of goal. DSA uses elliptic curve cryptography (ECC) rather than the RSA cipher.</p>
+<p>Therefore, both are used within the same product in a type of key exchange system known as a digital envelope or hybrid encryption. A digital envelope allows the sender and recipient to exchange a symmetric encryption key securely by using public key cryptography</p>
+<p>The question then arises of how anyone can trust the identity of the person or server issuing a public key. One solution is to have a third party, referred to as a <em>certificate authority (CA),</em> validate the owner of the public key by issuing the subject with a certificate. The certificate is signed by the CA. If the recipient also trusts the CA, they can also trust the public key wrapped in the subject's certificate. The process of issuing and verifying certificates is called <em>public key infrastructure (PKI).</em></p>
+<p>This risk from RSA key exchange is mitigated by perfect forward secrecy (PFS). PFS uses Diffie-Hellman (DH) key agreement to create ephemeral session keys without using the server's private key. Diffie-Hellman allows Alice and Bob to derive the same shared secret just by agreeing some values that are all related by some trapdoor function.</p>
+<p>The final part of a cipher suite determines the bulk encryption cipher. When AES is selected as the symmetric cipher, it has to be used in a mode of operation that supports a stream of network data.
+    The Cipher Block Chaining (CBC) mode applies an initialization vector (IV) to the first plaintext block to ensure that the key produces a unique ciphertext from any given plaintext. The output of the first ciphertext block is then combined with the next plaintext block using an XOR operation. This process is repeated through the full "chain" of blocks, which (again) ensures that no plaintext block produces the same ciphertext. CBC needs to use padding to ensure that the data to encrypt is an exact multiple of the block size.
+    Counter mode (CTM) makes the AES algorithm work as a stream cipher. Counter mode applies an IV plus an incrementing counter value to the key to generate a keystream. The keystream is then XOR'ed to the data in the plaintext blocks. Each block can be processed individually and consequently in parallel, improving performance. Also, counter modes do not need to use padding. Any unused space in the last block is simply discarded.</p>
+<p>A message authentication code (MAC) provides an authentication and integrity mechanism by hashing a combination of the message output and a shared secret key. The recipient can perform the same process using his or her copy of the secret key to verify the data. This type of authenticated encryption scheme is specified in a cipher suite as separate functions, such as "AES CBC with HMAC-SHA." Unfortunately, the implementation of this type of authenticated mode in AES CBC is vulnerable to a type of cryptographic attack called a padding oracle attack (<a href="https://docs.microsoft.com/en-us/dotnet/standard/security/vulnerabilities-cbc-mode">docs.microsoft.com/en-us/dotnet/standard/security/vulnerabilities-cbc-mode</a>).</p>
+<p>The weaknesses of CBC arising from the padding mechanism means that stream ciphers or counter modes are strongly preferred. These use Authenticated Encryption with Additional Data (AEAD) modes of operation. In an AEAD scheme, the associated data allows the receiver to use the message header to ensure the payload has not been replayed from a different communication stream.</p>
+<p>An AEAD mode is identified by a single hyphenated function name, such as AES-GCM or AES-CCM. The ChaCha20-Poly1305 stream cipher has been developed as an alternative to AES.</p>
+<p>Obfuscation is the art of making a message difficult to understand. Obfuscated source code is rewritten in a way that does not affect the way the computer compiles or executes the code, but makes it difficult for a person reading the code to understand how it works.</p>
+<p>Often, it is necessary to use an additional random or pseudo-random value in conjunction with the cipher:
+- Nonce—the principal characteristic of a nonce is that it is never reused ("number used once") within the same scope (that is, with the same key value). It could be a random or pseudo-random value, or it could be a counter value.
+- Initialization vector (IV)—the principal characteristic of an IV is that it is random (or pseudo-random). There may also be a requirement that an IV not be reused (as with a nonce), but this is not the primary characteristic.
+- Salt—this is also a random or pseudo-random number or string. The term <em>salt</em> is used specifically in conjunction with hashing password values.</p>
+<p>A downgrade attack can be used to facilitate a man-in-the-middle attack by requesting that the server use a lower specification protocol with weaker ciphers and key lengths. For example, rather than use TLS 1.3, as the server might prefer, the client requests the use of SSL. It then becomes easier for Mallory to forge the signature of a certificate authority that Alice trusts and have Alice trust Mallory's public key.</p>
+<p>A birthday attack is a type of brute force attack aimed at exploiting collisions in hash functions. A collision is where a function produces the same hash value for two different plaintexts. This type of attack can be used for the purpose of forging a digital signature. The attack works as follows:
+1. The attacker creates a malicious document and a benign document that produce the same hash value. The attacker submits the benign document for signing by the target.
+2. The attacker then removes the signature from the benign document and adds it to the malicious document, forging the target's signature.
+The trick here is being able to create a malicious document that outputs the same hash as the benign document. The birthday paradox means that the computational time required to do this is less than might be expected. The birthday paradox asks how large must a group of people be so that the chance of two of them sharing a birthday is 50%.</p>
+<h3 id="lesson-6">Lesson 6<a class="headerlink" href="#lesson-6" title="Permanent link">&para;</a></h3>
+<p>CAs must maintain a <strong>certificate</strong> revocation list (CRL) of all revoked and suspended certificates, which can be distributed throughout the hierarchy.</p>
+<p>A CRL has the following attributes:
+- Publish period—the date and time on which the CRL is published. Most CAs are set up to publish the CRL automatically.
+- Distribution point(s)—the location(s) to which the CRL is published.
+- Validity period—the period during which the CRL is considered authoritative. This is usually a bit longer than the publish period (for example, if the publish period was every 24 hours, the validity period might be 25 hours).
+- Signature—the CRL is signed by the CA to verify its authenticity.</p>
+<p>Another means of providing up-to-date information is to check the certificate's status on an Online Certificate Status Protocol (OCSP) server, referred to as an <em>OCSP responder.</em> Rather than return a whole CRL, this just communicates the status of the requested certificate. Details of the OCSP responder service should be published in the certificate.</p>
+<p>Pinning refers to several techniques to ensure that when a client inspects the certificate presented by a server or a code-signed application, it is inspecting the proper certificate. This might be achieved by embedding the certificate data in the application code, or by submitting one or more public keys to an HTTP browser via an HTTP header, which is referred to as <em>HTTP Public Key Pinning (HPKP).</em> The replacement mechanism is the Certificate Transparency Framework.</p>
+<p>Cryptographic data—both certificates and keys—are processed as binary using Distinguished Encoding Rules (DER). Binary format files are not commonly used, however.</p>
+<p>More typically, the binary data is represented as ASCII text characters using Base64 Privacy-enhanced Electronic Mail (PEM) encoding. ASCII-format data has descriptive headers, such as the "BEGIN CERTIFICATE" string.</p>
+<p>A certificate file can also contain more than just a single certificate:
+- The PKCS #12 format allows the export of the private key with the certificate. This would be used either to transfer a private key to a host that could not generate its own keys, or to back up/archive a private key. This type of file format is usually password-protected and always binary. On Windows, these usually have a .PFX extension, while MacOS and iOS use .P12. In Linux, the certificate and key are usually stored in separate files.
+- The P7B format implements PKCS #7, which is a means of bundling multiple certificates in the same file. It is typically in ASCII format. This is most often used to deliver a chain of certificates that must be trusted by the processing host. It is associated with the use of S/MIME to encrypt email messages. P7B files do not contain the private key. In Linux, the .PEM extension is very widely used for certificate chains.</p>
+<h3 id="lesson-7">Lesson 7<a class="headerlink" href="#lesson-7" title="Permanent link">&para;</a></h3>
+<p>An <strong>identity and access management (IAM)</strong> system is usually described in terms of four main processes: 
+- <strong>Identification</strong>—creating an account or ID that uniquely represents the user, device, or process on the network. 
+- <strong>Authentication</strong>—proving that a subject is who or what it claims to be when it attempts to access the resource. 
+- <strong>Authorization</strong>—determining what rights subjects should have on each resource, and enforcing those rights. 
+- <strong>Accounting</strong>—tracking authorized usage of a resource or use of rights by a subject and alerting when unauthorized use is detected or attempted.</p>
+<p>Windows network sign-in—the LSA can pass the credentials for authentication to a network service. The preferred system for network authentication is based on Kerberos, but legacy network applications might use NT LAN Manager (NTLM) authentication.</p>
+<p>A single sign-on (SSO) system allows the user to authenticate once to a local device and be authenticated to compatible application servers without having to enter credentials again. In Windows, SSO is provided by the Kerberos framework.</p>
+<p>Kerberos is a single sign-on network authentication and authorization protocol used on many networks, notably as implemented by Microsoft's Active Directory (AD) service. Kerberos was named after the three-headed guard dog of Hades (Cerberus) because it consists of three parts. Clients request services from application servers, which both rely on an intermediary—a Key Distribution Center (KDC)—to vouch for their identity. There are two services that make up a KDC: the Authentication Service and the Ticket Granting Service. The KDC runs on port 88 using TCP or UDP.</p>
+<p>The Password Authentication Protocol (PAP) is an unsophisticated authentication method developed as part of the Point-to-Point Protocol (PPP), used to transfer TCP/IP data over serial or dial-up connections. It is also used as the basic authentication mechanism in HTTP. It relies on clear text password exchange and is therefore obsolete for most purposes, except through an encrypted tunnel.</p>
+<p>The Challenge Handshake Authentication Protocol (CHAP) was also developed as part of PPP as a means of authenticating users over a remote link. CHAP relies on an encrypted challenge in a system called a <em>three-way handshake.</em>
+1. Challenge—the server challenges the client, sending a randomly generated challenge message.
+2. Response—the client responds with a hash calculated from the server challenge message and client password (or other shared secret).
+3. Verification—the server performs its own hash using the password hash stored for the client. If it matches the response, then access is granted; otherwise, the connection is dropped.
+The handshake is repeated with a different challenge message periodically during the connection (although transparent to the user). This guards against <em>replay attacks,</em> in which a previous session could be captured and reused to gain access.</p>
+<p>The Initiative for Open Authentication (OATH) is an industry body established with the aim of developing an open, strong authentication framework. <em>Open</em> means a system that any enterprise can link into to perform authentication of users and devices across different networks. <em>Strong</em> means that the system is based not just on passwords, but also on 2- or 3-factor authentication or on 2-step verification. OATH has developed two algorithms for implementing one time passwords (OTPs).</p>
+<p>HMAC-based One-time Password Algorithm (HOTP) is an algorithm for token-based authentication (<a href="https://www.ietf.org/rfc/rfc4226.html">https://www.ietf.org/rfc/rfc4226.html</a>). The authentication server and client token are configured with the same shared secret. This should be an 8-byte value generated by a cryptographically strong random number generator. The token could be a fob-type device or implemented as a smartphone authentication/authenticator app. The shared secret can be transmitted to the smartphone app as a QR code image acquirable by the phone's camera so that the user doesn't have to type anything. Obviously, it is important that no other device is able to acquire the shared secret. The shared secret is combined with a counter to create a one-time password when the user wants to authenticate. The device and server both compute the hash and derive an HOTP value that is 6-8 digits long. This is the value that the user must enter to authenticate with the server. The counter is incremented by one.</p>
+<p>The Time-based One-time Password Algorithm (TOTP) is a refinement of the HOTP (<a href="https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdatatracker.ietf.org%2Fdoc%2Fhtml%2Frfc6238&amp;data=04%7C01%7Cdandries%40comptia.org%7C79b46abac0f04b29ecae08d9bef00625%7C8c39a7ffe0774d1c9a1c7431fe5eb465%7C0%7C0%7C637750760424782889%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&amp;sdata=iBZcXWlOthfRUWPX5dGZdB8zh1PoUKo3picunapbngM%3D&amp;reserved=0">https://datatracker.ietf.org/doc/html/rfc6238</a>). One issue with HOTP is that tokens can be allowed to persist unexpired, raising the risk that an attacker might be able to obtain one and decrypt data in the future. In TOTP, the HMAC is built from the shared secret plus a value derived from the device's and server's local timestamps. TOTP automatically expires each token after a short window (60 seconds, for instance). For this to work, the client device and server must be closely time-synchronized. One well-known implementation of HOTP and TOTP is Google Authenticator.</p>
+<h3 id="lesson-8">Lesson 8<a class="headerlink" href="#lesson-8" title="Permanent link">&para;</a></h3>
+<p>Discretionary access control (DAC) is based on the primacy of the resource owner. The owner is originally the creator of a file or service, though ownership can be assigned to another user. The owner is granted full control over the resource, meaning that he or she can modify its access control list (ACL) to grant rights to others.
+DAC is the most flexible model and is currently implemented widely in terms of computer and network security. In terms of file system security, it is the model used by default for most UNIX/Linux distributions and by Microsoft Windows. As the most flexible model, it is also the weakest because it makes centralized administration of security policies the most difficult to enforce. It is also the easiest to compromise, as it is vulnerable to insider threats and abuse of compromised accounts.</p>
+<p>Role-based access control (RBAC) adds an extra degree of centralized control to the DAC model. Under RBAC, a set of organizational roles are defined, and subjects allocated to those roles. Under this system, the right to modify roles is reserved to a system owner. Therefore, the system is non-discretionary, as each subject account has no right to modify the ACL of a resource, even though they may be able to change the resource in other ways. Users are said to gain rights implicitly (through being assigned to a role) rather than explicitly (being assigned the right directly).
+RBAC can be partially implemented through the use of security group accounts, but they are not identical schemes. Membership of security groups is largely discretionary (assigned by administrators, rather than determined by the system). Also, ideally, a subject should only inherit the permissions of a role to complete a particular task rather than retain them permanently.</p>
+<p>Mandatory access control (MAC) is based on the idea of security clearance levels. Rather than defining ACLs on resources, each object and each subject is granted a clearance level, referred to as a label. If the model used is a hierarchical one (that is, high clearance users are trusted to access low clearance objects), subjects are only permitted to access objects at their own clearance level or below.
+The labelling of objects and subjects takes place using pre-established rules. The critical point is that these rules cannot be changed by any subject account, and are therefore non-discretionary. Also, a subject is not permitted to change an object's label or to change his or her own label.</p>
+<p>Attribute-based access control (ABAC) is the most fine-grained type of access control model. As the name suggests, an ABAC system is capable of making access decisions based on a combination of subject and object attributes plus any context-sensitive or system-wide attributes. As well as group/role memberships, these attributes could include information about the OS currently being used, the IP address, or the presence of up-to-date patches and anti-malware. An attribute-based system could monitor the number of events or alerts associated with a user account or with a resource, or track access requests to ensure they are consistent in terms of timing of requests or geographic location. It could be programmed to implement policies, such as M-of-N control and separation of duties.</p>
+<p>Privileged access management (PAM) refers to policies, procedures, and technical controls to prevent the malicious abuse of privileged accounts and to mitigate risks from weak configuration control over privileges. These controls identify and document privileged accounts, giving visibility into their use, and manage the credentials used to access them (<a href="https://www.beyondtrust.com/resources/glossary/privileged-access-management-pam">beyondtrust.com/resources/glossary/privileged-access-management-pam</a>).</p>
+<p>Conditional access is an example of rule-based access control. A conditional access system monitors account or device behavior throughout a session. If certain conditions are met, the account may be suspended or the user may be required to reauthenticate, perhaps using a 2-step verification method. The User Account Control (UAC) and sudo restrictions on privileged accounts are examples of conditional access. The user is prompted for confirmation or authentication when requests that require elevated privileges are made. Role-based rights management and ABAC systems can apply a number of criteria to conditional access, including location-based policies (<a href="https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview">docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview</a>).</p>
+<p>Federation is the notion that a network needs to be accessible to more than just a well-defined group of employees. In business, a company might need to make parts of its network open to partners, suppliers, and customers. The company can manage its employee accounts easily enough. Managing accounts for each supplier or customer internally may be more difficult. Federation means that the company trusts accounts created and managed by a different network. As another example, in the consumer world, a user might want to use both Google Apps and X (formerly Twitter). If Google and X establish a federated network for the purpose of authentication and authorization, then the user can log on to X using his or her Google credentials or vice versa.</p>
+<p>A federated network or cloud needs specific protocols and technologies to implement user identity assertions and transmit attestations between the principal, the relying party, and the identity provider. Security Assertion Markup Language (SAML) is one such solution. SAML attestations (or authorizations) are written in eXtensible Markup Language (XML). Communications are established using HTTP/HTTPS and the Simple Object Access Protocol (SOAP). These secure tokens are signed using the XML signature specification. The use of a digital signature allows the relying party to trust the identity provider.
+As an example of a SAML implementation, Amazon Web Services (AWS) can function as a SAML service provider. This allows companies using AWS to develop cloud applications to manage their customers' user identities and provide them with permissions on AWS without having to create accounts for them on AWS directly.</p>
+<p>Enforcing an acceptable use policy (AUP) is important to protect the organization from the security and legal implications of employees misusing its equipment. Typically, the policy will forbid the use of equipment to defraud, to defame, or to obtain illegal material. It will prohibit the installation of unauthorized hardware or software and explicitly forbid actual or attempted snooping of confidential data that the employee is not authorized to access. Acceptable use guidelines must be reasonable and not interfere with employees' fundamental job duties or privacy rights. An organization's AUP may forbid use of Internet tools outside of work-related duties or restrict such use to break times.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

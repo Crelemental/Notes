@@ -1,0 +1,1922 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Software%20Troubleshooting%20and%20Operational%20Procedures/">
+      
+      
+        <link rel="next" href="../../IT%20Foundations%20-%20A%2B%20Core%201/Mobile%20Devices/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>Study Notes - Crelementals notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-2-1-backup-rule" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Crelementals notes" class="md-header__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Crelementals notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Study Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Crelementals notes" class="md-nav__button md-logo" aria-label="Crelementals notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Crelementals notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crelemental's Notes!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Critical Thinking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Critical Thinking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Critical%20Thinking/Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fundamentals of Information Security
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals of Information Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Assessing%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assessing Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Auditing%20and%20Accountability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditing and Accountability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Authorization%20and%20Access%20Control/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authorization and Access Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Human%20Element%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITSec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Identification%20and%20Authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Identification and Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Laws%20and%20Regulations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laws and Regulations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Mobile%2C%20Embedded%2C%20and%20IOT%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mobile, Embedded, and IOT Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Network%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operating%20System%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operating System Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Operations%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operations Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/Physical%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Physical Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fundamentals%20of%20Information%20Security/What%20is%20information%20security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is information security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ISC2 SSCP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ISC2 SSCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Access%20Controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Cryptography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Incident%20Response%20and%20Recovery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incident Response and Recovery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Network%20and%20Communications%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network and Communications Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Risk%20Identification%2C%20Monitoring%2C%20and%20Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification, Monitoring, and Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Sec%20Ops%20and%20Administration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sec Ops and Administration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/Systems%20and%20Application%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systems and Application Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ISC2%20SSCP/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Applications   A+ Core 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            IT Applications   A+ Core 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Operating%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Software%20Troubleshooting%20and%20Operational%20Procedures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing Security Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Study Notes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Study Notes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-2-1-backup-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      3-2-1 Backup Rule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test problems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examcompass" class="md-nav__link">
+    <span class="md-ellipsis">
+      ExamCompass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IT Foundations   A+ Core 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IT Foundations   A+ Core 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Mobile%20Devices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/PCS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PCS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/Printers%20etc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Core1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IT%20Foundations%20-%20A%2B%20Core%201/note%20taking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note taking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network and Security Foundations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Network and Security Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Network%20Security%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firewalls, IDS, IPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Networking%20Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TCP/IP and OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%20and%20Security%20Foundations/Networking%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Sec Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Network+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Network+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Applied%20Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Connections%20and%20Addressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OSI Model #OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/Network%20Design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Topologies and Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Network%2B/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Security+
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Security+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Incidents%20and%20Investigations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Incidents and Investigations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Networks%20and%20Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Networks and Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Secure%20and%20Resilient%20Operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure and Resilient Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Securing%20Information/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securing Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/Securing%20Networks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securing Networks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security%2B/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-2-1-backup-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      3-2-1 Backup Rule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test problems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examcompass" class="md-nav__link">
+    <span class="md-ellipsis">
+      ExamCompass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>The user can also display help on a particular command by using the /? switch.</p>
+<p>The robocopy command (or "robust copy") is another file copy utility. Microsoft now recommends using robocopy rather than xcopy. For example, robocopy works better with long file names and New Technology File System (NTFS) attributes.</p>
+<p>The Windows Resource Protection mechanism prevents damage to, or malicious use, of system files and registry keys and files. In addition, the System File Checker utility (sfc) provides a manual interface for verifying system files and restoring them from the cache if found corrupt or damaged.</p>
+<p>![[Pasted image 20231110131907.png]]
+![[Pasted image 20231110134202.png]]</p>
+<p>SUSE and Red Hat are subscription-based. Originally developed by Linus Torvalds, Linux is a fully open-source OS kernel derived from UNIX.</p>
+<p>A Windows administrator wants to become more familiar with Linux but still wants to use Windows primarily. The administrator installs the bash subsystem for Windows and is reading about how Windows has made strides to become more compatible with Linux. Which of the following was part of the changes to the underlying New Technology File System (NTFS) structure?
+    To support UNIX/Linux compatibility, Microsoft engineered the New Technology File System (NTFS) to support case-sensitive naming, hard links, and other key features UNIX/Linux applications require.</p>
+<p>A server administrator tests an application migration from a 32-bit server to a 64-bit server, but the application is still 32-bit. Where will Windows run the application?
+    In 64-bit Windows, the applications run within a special application environment called WOW64 (Windows on Windows 64-bit). This environment replicates the 32-bit environment expected by the application and translates its requests into ones that can be processed by the 64-bit CPU, memory, and file subsystems.</p>
+<p>A curious IT professional investigates the hidden System Reserved partition. What will the professional find contained in the partition?
+    The BOOTMGR and the boot configuration data (BCD) file are normally installed to a hidden System Reserved partition.</p>
+<p><strong>Extensible Authentication Protocol over Wireless (EAPoW)</strong> is a protocol used for wireless network authentication. It allows for a variety of authentication methods to be used over wireless networks. When implementing EAPoW, the network professional will need to configure an authentication server that supports EAP methods, and this is often done using <strong>Active Directory</strong> (AD).  Active Directory is a directory service developed by Microsoft that provides centralized authentication, authorization, and directory services. It's commonly used for user authentication in enterprise environments, and it can be integrated with various EAP methods to provide secure and centralized authentication for wireless networks.</p>
+<p>A user finds that their home computer fails to boot. The user believes part of the operating system (OS) is corrupted. They want to recover it but do not want to lose any personal documents. What should the user do?
+    Using refresh recopies the system files and reverts most system settings to the default but can preserve user personalization settings, data files, and apps installed via the Windows Store.</p>
+<p>A server administrator wants to keep up with security patches and points their machines to pull updates. What should the administrator point towards?
+    Copies of distribution packages (including any updates) will be posted to a software repository. Often the vendor will maintain different repositories. It can then be used to install, uninstall, or update the software.</p>
+<p>After downloading a new application from the internet, a user drags the .app directory from their Downloads folder to their Applications folder on their Mac. What action did the user most likely perform?
+    When the app has been installed, it is placed in a directory with a .app extension in the Applications folder.</p>
+<p>A security analyst is looking at the overall security status of systems on the network. Which of the following represents the greatest risk?
+    A legacy or end of life (EOL) system is one where the software vendor no longer provides support or fixes for problems. These represent the greatest risk to the network.</p>
+<p>A network administrator is setting up administrative access to network devices. What common solution is used for this?
+    TACACS+ is an AAA protocol like RADIUS, but it is typically used for device administration rather than user access to the network.</p>
+<p>A network manager for a growing coffee company sets up wireless access points at cafe locations for users. The manager wants to set up access to allow anyone in the vicinity to join without a password but also make it as secure as possible. Which standard introduced this ability?
+    In WPA2, Wi-Fi Enhanced Open traffic is unencrypted. WPA3 encrypts this traffic. This means that any station can still join the network, but traffic is protected against sniffing.</p>
+<p>A security manager at a top-secret facility assesses the feasibility of integrating biometric authentication but has heard that it is often not accurate. Which of the following is the most accurate form of biometrics?
+    Retinal scanning is one of the most accurate forms of biometrics. Retinal patterns are very secure, but the equipment required is expensive and the process is relatively intrusive and complex.</p>
+<p>Mobile OS vendors use this "walled garden" model of software distribution as well. Apps are distributed from an approved store, such as Apple's App Store or the Windows Store.</p>
+<p>A security manager sets up a defense in depth mechanism and sets up monitoring to catch communications from the attacker to the malware. What is the manager monitoring for?
+    Whether a backdoor is used as a standalone intrusion mechanism or to manage bots, the threat actor must establish a connection from the compromised host to a command and control (C2 or C&amp;C) host or network.</p>
+<p>A Firefox user wants to open up their browser settings to configure their intranet as the home page. How can the Firefox user access the settings?
+    about:preferences</p>
+<p>A user's phone is randomly rebooting all the time. What should the user do first to diagnose the issue?
+    A device that randomly reboots might be overheating, having a low battery charge, or having a faulty battery or other hardware.</p>
+<p>A security analyst analyzes how most attackers perform exploits against iOS operating systems. Which of the following is most applicable?
+    For most exploits, this can only be done when the device is attached to a computer while it boots (tethered jailbreak).</p>
+<p>A security manager is looking at mobile security for company devices. They are investigating no-root firewalls and understanding how this works. Which of the following best describes no-root firewalls?
+    "No-root" firewalls work by creating a virtual private network (VPN) and then controlling app access to the virtual private network (VPN).</p>
+<p>Email data and any apps using the "Data Protection" option are subject to a second round of encryption using a key derived from and protected by the user's credential.</p>
+<p>A Windows administrator is combing through server logs and sees that a wscript.exe executed a script. What type of script is executed by default?
+    VBScript files are identified by the .VBS extension. VBScript is executed by the wscript.exe interpreter by default.</p>
+<p>A user at a large organization notices that their computer is extremely sluggish. This happened shortly after the user clicked on a link in an email that seemed suspicious. Where should the user most likely report this to?
+    Larger organizations will provide a dedicated Computer Security Incident Response Team (CSIRT) as a single point of contact so that a security incident can be reported through the proper channels.</p>
+<p>A security engineer wants to learn how to code in Python but is running a Windows box. Which of the following is the easiest interpreter to set up for Windows?
+    CPython is the simplest environment to set up for Windows. When using CPython in Windows, there is a console interpreter (python.exe) and a windowed interpreter (pythonw.exe).</p>
+<p>A server administrator is setting up a backup program for the servers to ensure recovery. Which of the following are the two main principles of backing up? (Select all that apply.)
+    Frequency
+    Retention</p>
+<h3 id="3-2-1-backup-rule">3-2-1 Backup Rule<a class="headerlink" href="#3-2-1-backup-rule" title="Permanent link">&para;</a></h3>
+<p>The 3-2-1 backup rule is a best-practice maxim that you can apply to your backup procedures to verify that you are implementing a solution that can mitigate the widest possible range of disaster scenarios. It states that you should have three copies of your data (including the production copy), across two media types, with one copy held offline and off site.</p>
+<p>A company's threat intelligence team determines that one of a threat actor's techniques is to perform a denial of service against the Remote Desktop Protocol (RDP) functionality in servers. What can the company enable to help prevent this?
+    Network Level Authentication (NLA) protects the Remote Desktop Protocol (RDP) server against denial of service attacks. Without NLA, the system configures a desktop before the user logs on.</p>
+<p>A security analyst working on a monitoring team wants to implement new monitoring mechanisms around Secure Shell (SSH) authentication. Which of the following should the analyst focus on?
+    Monitoring for and removing compromised client public keys is a critical security task. Many recent attacks on web servers have exploited poor SSH key management.</p>
+<p>Remote network boot capability is often referred to as wake on LAN (WOL) and allows devices to be remotely powered on over a network.</p>
+<p>In a Windows batch file, the net use command performs drive mapping. Network drive mapping is a Windows-only concept.</p>
+<p>A user experiences issues with their computer and has asked someone to remote desktop onto their computer to help resolve the issue. Unfortunately, the firewall only allows port 443 traffic. What should they use for assistance?
+    Quick Assist works over the encrypted HTTPS port TCP/443. The helper must be signed in with a Microsoft account to offer assistance.</p>
+<p>A user accidentally deleted the presentation they were working on for an important upcoming meeting. Where should the user go for help?
+    In Windows, user data backup options are implemented via the File History feature, which is accessed through Settings &gt; Update &amp; Security &gt; Backup.</p>
+<p>A data center technician receives the latest shipment, but it includes some hazardous materials. What should the technician check first?
+    Some hazard information will be provided on labels, but the supplier must also provide more detailed information on an SDS (Safety Data Sheet).</p>
+<h1 id="test-problems">Test problems<a class="headerlink" href="#test-problems" title="Permanent link">&para;</a></h1>
+<p>A company has several offices within the United States. Engineers look to configure Microsoft DirectAccess virtual private networking technology for remote connections. Engineers instruct IT to deploy which operating system to Windows desktops?
+    Windows Enterprise edition has several features that are not available in the Pro edition, such as support for Microsoft’s DirectAccess virtual private networking technology.</p>
+<p>How might a mobile-device management suite of software detect that a user has rooted an Android device?
+    1. There is no valid developer code signature.</p>
+<p>A network engineer implements a proxy at a small company. The configuration does not require settings on every client machine. What type of proxy does the engineer deploy? (Select all that apply.)
+    1. Transparent <br />
+    Intercepting</p>
+<p>![[Pasted image 20231117142309.png]]
+Domain Controllers: OU</p>
+<p>A Windows user is not able to resolve server names on a local network. After updating the system’s hosts file, which command does the user issue?
+    The domain name system (DNS) is used to resolve IP addresses to host names. Whether a server or a hosts file is used, the ipconfig /flushdns command clears a system’s DNS cache.</p>
+<p>A Windows user runs the Performance Monitor tool to check disk activity. What counter is the best option the user can evaluate to understand how busy the disk is at any given time?
+    The % disk time metric is the percentage of elapsed time that the selected disk drive is busy servicing read or write requests.</p>
+<p>A technician would like to set every Windows computer at an organization to have a company logo as a desktop wallpaper. What does the technician determine as the best method for deploying the setting?
+    A domain group policy configures computer settings and user profile settings for all computers and user accounts within a domain. This type of policy would satisfy the requirement.</p>
+<p>A user suspects that a USB drive on their system has been tampered with. The user begins using the drive by saving a few reports while waiting for an IT technician to investigate. What does the user compromise?
+    Data integrity refers to the authorized or unauthorized manipulation of data. This also applies to intentional or unintentional manipulation. Contents of the drive may be useful as evidence.</p>
+<p>A user installs an application on a macOS device. The user determines that installation will require running an additional service. What installer format does the application use?
+    The macOS pkg format is used where app setup needs to perform additional actions, such as running a service or writing files to multiple folders.</p>
+<p>![[Pasted image 20231117142522.png]]</p>
+<p>A tech has an Android tablet that no longer receives updates due to its age. Learning that a custom firmware with new features is available, what does the tech require to install the image?
+    For some devices, it is necessary to exploit a vulnerability or use custom firmware. Custom firmware is essentially a new Android OS image applied to the device and requires root access to install.</p>
+<p>A technician configures a backup routine on an important workstation. Which type does the routine use when only backing changes since the last full backup?
+    Differential jobs select new files and files modified since the original full job. A differential chain has moderate time and storage requirements.</p>
+<p>A computer security team investigates a high-level computer breach at a large company. While investigating one of the computers in question, the team finds a USB drive inserted into the back of the shared user desktop tower. What are the primary concerns for the team from this discovery related specifically to the USB drive found? <strong>(Select all that apply.)</strong>
+    Chain of Custody refers to the sequence of custody, control, transfer, analysis, and disposition of evidence. It is crucial to maintain a record to show who has had control of the evidence to ensure its integrity and admissibility in court. In this case, the USB drive could be critical evidence, so maintaining its chain of custody is essential.<br />
+    Data Integrity refers to the authorized or unauthorized manipulation of data. Digital information is susceptible to tampering, especially when it is easily accessible via an unsecured USB drive plugged into a computer. The team must ensure that the data on the drive hasn't been altered in any unauthorized way.</p>
+<p>A user looks to reconfigure an IP address for a network adapter. Which Control Panel applet is the most direct?
+    Network Connections (ncpa.cpl) is a Control Panel applet for managing adapter devices, including IP address information.</p>
+<p>A tech firm deploys wireless installations at client sites. As the firm uses Wi-Fi Protected Access (WPA) version 3, which security technology does the deployment utilize? (Select all that apply.)
+    Simultaneous Authentication of Equals (SAE) in WPA3 replaces the 4-way handshake in WPA2. The 4-way handshake mechanism is vulnerable to manipulations that allow a threat actor to recover the key.
+    WPA3 replaces Advanced Encryption Standard Counter Mode with Cipher Block Chaining Message Authentication Code Protocol with the stronger AES Galois Counter Mode Protocol (GCMP) mode of operation.</p>
+<p>A user needs to restore a problematic Windows system to its original factory state. What approach does the user utilize to achieve the restoration?
+    A factory recovery partition is a tool used by the original equipment manufacturers (OEMs) to restore the OS environment to its ship state. The recovery partition is created on the internal fixed drive.</p>
+<p>A recent software installation on a Windows desktop fails. Which internal log file does a technician review to see what may have gone wrong?
+    The application log contains information regarding non-core processes and utilities for some third-party applications. Third-party application installers write events to the application log.</p>
+<p>A problematic Windows system with multiple operating systems installed does not boot properly. A support technician tries to diagnose by outlining the boot process. The technician determines that the system uses an Extensible Firmware Interface (EFI) system partition. Which file does the technician inspect for problems related to a specific operating system boot problem?
+    The GUID partition table (GPT) identifies a System Partition. The system partition contains the boot manager and the boot configuration data (BCD). Each Windows installation has a subfolder under \EFI\Microsoft that contains a BCD and BOOTMGFW.EFI.</p>
+<p>![[Pasted image 20231117142933.png]]</p>
+<p>A Windows user runs the Defragment and Optimize Drives tool (dfrgui.exe) on a solid state drive (SSD). What action will the tool take on the drive? (Select all that apply.)
+    On a solid state drive (SSD), data is stored in units called blocks that are not directly managed by the OS. The tool runs a trim process that identifies data that the OS has marked as deletable.
+    When the tool initiates a trim, data that is marked as deletable ultimately has its occupied blocks tagged as writable.</p>
+<p>A computer user looks to map a network drive using the most basic scripting language possible. Which language does the user implement for a Windows system?
+    Windows PowerShell (PS) combines a script language with hundreds of prebuilt modules called cmdlets that can access and change most components and features of Windows and Active Directory.</p>
+<p>A Windows 7 computer user requires help from the IT department. A technician instructs the user to create an invitation file. What type of Windows help session does the user create?
+    Microsoft Remote Assistance (MSRA) allows a user to ask for help from a technician or co-worker via an invitation file protected by a passcode.</p>
+<p>A user wishes to enable multiple desktops within macOS for different work environments. What feature makes this possible?
+    The Mission Control feature is used for window management and enables the user to set up multiple desktops with different sets of apps and backgrounds.</p>
+<h1 id="examcompass">ExamCompass<a class="headerlink" href="#examcompass" title="Permanent link">&para;</a></h1>
+<p>list directories: dir, dir * . *
+make dir: mkdir, md
+display current computer: hostname
+Netstat: active TCP/IP connections, Network protocol statistics
+net use :for computer connections to shared resources
+shutdown :shutdown local or remote host
+sfc :scans integrity of protected files and replaces incorrect versions
+diskpart :cml partitioning utility
+pathping :features of ping and tracert</p>
+<h1 id="core2">Core2<a class="headerlink" href="#core2" title="Permanent link">&para;</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
